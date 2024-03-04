@@ -1,113 +1,169 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import Categories from "@/app/components/categories";
+import {useState} from "react";
+import {TbBeach, TbMountain, TbPool} from "react-icons/tb";
+import {
+  GiBarn,
+  GiBoatFishing,
+  GiCactus,
+  GiCastle,
+  GiCaveEntrance,
+  GiForestCamp,
+  GiIsland,
+  GiWindmill
+} from "react-icons/gi";
+import {MdOutlineVilla} from "react-icons/md";
+import {FaSkiing} from "react-icons/fa";
+import {BsSnow} from "react-icons/bs";
+import {IoDiamond} from "react-icons/io5";
+
+const Home = () => {
+  const [xPos, setXpos] = useState(0);
+  const [style, setStyle] = useState({transform: `translateX(${xPos}px)`});
+  const categories = [
+    {
+      label: 'Beach',
+      icon: TbBeach,
+      description: 'This property is close to the beach!',
+    },
+    {
+      label: 'Windmills',
+      icon: GiWindmill,
+      description: 'This property is has windmills!',
+    },
+    {
+      label: 'Modern',
+      icon: MdOutlineVilla,
+      description: 'This property is modern!'
+    },
+    {
+      label: 'Countryside',
+      icon: TbMountain,
+      description: 'This property is in the countryside!'
+    },
+    {
+      label: 'Pools',
+      icon: TbPool,
+      description: 'This is property has a beautiful pool!'
+    },
+    {
+      label: 'Islands',
+      icon: GiIsland,
+      description: 'This property is on an island!'
+    },
+    {
+      label: 'Lake',
+      icon: GiBoatFishing,
+      description: 'This property is near a lake!'
+    },
+    {
+      label: 'Skiing',
+      icon: FaSkiing,
+      description: 'This property has skiing activies!'
+    },
+    {
+      label: 'Castles',
+      icon: GiCastle,
+      description: 'This property is an ancient castle!'
+    },
+    {
+      label: 'Caves',
+      icon: GiCaveEntrance,
+      description: 'This property is in a spooky cave!'
+    },
+    {
+      label: 'Camping',
+      icon: GiForestCamp,
+      description: 'This property offers camping activities!'
+    },
+    {
+      label: 'Arctic',
+      icon: BsSnow,
+      description: 'This property is in arctic environment!'
+    },
+    {
+      label: 'Desert',
+      icon: GiCactus,
+      description: 'This property is in the desert!'
+    },
+    {
+      label: 'Barns',
+      icon: GiBarn,
+      description: 'This property is in a barn!'
+    },
+    {
+      label: 'Lux',
+      icon: IoDiamond,
+      description: 'This property is brand new and luxurious!'
+    }
+  ];
+  const onClick =  (direction: string) => {
+    const maxWith = (categories.length) * 70;
+
+    if(direction === "left") {
+      if(xPos !== 0) {
+        setXpos(x => x + 70)
+      }
+
+    }
+    if(direction === "right") {
+      if(xPos !== maxWith && xPos <= maxWith) {
+        setXpos(x => x - 70)
+      }
+    }
+    setStyle({transform: `translateX(${xPos}px)`});
+    console.log(xPos)
+  }
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+      <div className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 py-6 sm:py-12">
+        <img src="https://play.tailwindcss.com/img/beams.jpg" alt="" className="absolute left-1/2 top-1/2 max-w-none -translate-x-1/2 -translate-y-1/2" width="1308" />
+        <div className="absolute inset-0 bg-[url(https://play.tailwindcss.com/img/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
+        <div className="relative w-[1000px] bg-white px-2 pb-8 pt-10 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-2xl sm:rounded-lg sm:px-2">
+          <div className="mx-auto w-full">
+            <div className="flex w-full flex-row items-center justify-between border-b-2 border-slate-100 pb-8">
+              <img src="https://play.tailwindcss.com/img/logo.svg" className="h-6 hover:cursor-pointer" alt="Tailwind Play" />
+              <div className="flex min-w-52 justify-between text-sm">
+                <button className="flex w-auto flex-row items-center rounded-full border-2 border-black bg-black px-4 py-2 text-white transition duration-500 hover:border-2 hover:border-black hover:bg-white hover:text-black">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="mr-1 h-4 w-4">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                  </svg>
+
+                  Register
+                </button>
+                <button className="flex w-auto flex-row items-center rounded-full border-2 border-slate-200 bg-slate-200 px-4 py-2 transition duration-500 hover:border-2 hover:border-black hover:bg-white hover:text-black">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="mr-1 h-4 w-4">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15M12 9l-3 3m0 0 3 3m-3-3h12.75" />
+                  </svg>
+
+                  Login
+                </button>
+              </div>
+            </div>
+            <div className="relative flex w-full flex-row overflow-hidden py-4 pt-8">
+              <div className="absolute flex h-[45px] w-full flex-row items-center justify-between">
+                <button onClick={() => onClick("left")} className={`${(xPos === 0) ? 'invisible' : 'visible'} flex h-full w-12 items-center justify-center bg-opacity-50 bg-gradient-to-r from-white from-50% to-transparent px-3 transition duration-500 hover:cursor-pointer z-10`}>
+                  <div className="flex h-6 w-6 items-center justify-center rounded-full border-2 border-slate-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-4 w-4 text-slate-400">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                    </svg>
+                  </div>
+                </button>
+                <button onClick={() => onClick("right")} className="flex h-full w-12 items-center justify-center bg-opacity-50 bg-gradient-to-l from-white from-50% to-transparent px-3 transition duration-500 hover:cursor-pointer z-10">
+                  <div className="flex h-6 w-6 items-center justify-center rounded-full border-2 border-slate-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-4 w-4 text-slate-400">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg>
+                  </div>
+                </button>
+              </div>
+              <Categories style={style} categories={categories}/>
+            </div>
+          </div>
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
   );
 }
+
+export default Home;
