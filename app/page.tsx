@@ -1,7 +1,7 @@
 "use client";
 
 import Categories from "@/app/components/categories";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {TbBeach, TbMountain, TbPool} from "react-icons/tb";
 import {
   GiBarn,
@@ -19,8 +19,6 @@ import {BsSnow} from "react-icons/bs";
 import {IoDiamond} from "react-icons/io5";
 
 const Home = () => {
-  const [xPos, setXpos] = useState(0);
-  const [style, setStyle] = useState({transform: `translateX(${xPos}px)`});
   const categories = [
     {
       label: 'Beach',
@@ -98,22 +96,23 @@ const Home = () => {
       description: 'This property is brand new and luxurious!'
     }
   ];
-  const onClick =  (direction: string) => {
-    const maxWith = (categories.length) * 70;
-
-    if(direction === "left") {
+  const [xPos, setXpos] = useState(0);
+  const [styled, setStyled] = useState({transform: `translateX(${xPos}px)`});
+  const maxCategoryWith = (categories.length) * 70;
+  const onBack =  () => {
       if(xPos !== 0) {
         setXpos(x => x + 70)
       }
+      setStyled({transform: `translateX(${xPos}px)`});
+      return true;
+  }
 
+  const onNext =  () => {
+    if(xPos !== maxCategoryWith && xPos <= maxCategoryWith) {
+      setXpos(x => x - 70)
     }
-    if(direction === "right") {
-      if(xPos !== maxWith && xPos <= maxWith) {
-        setXpos(x => x - 70)
-      }
-    }
-    setStyle({transform: `translateX(${xPos}px)`});
-    console.log(xPos)
+    setStyled({transform: `translateX(${xPos}px)`});
+    return true;
   }
 
   return (
@@ -142,23 +141,7 @@ const Home = () => {
               </div>
             </div>
             <div className="relative flex w-full flex-row overflow-hidden py-4 pt-8">
-              <div className="absolute flex h-[45px] w-full flex-row items-center justify-between">
-                <button onClick={() => onClick("left")} className={`${(xPos === 0) ? 'invisible' : 'visible'} flex h-full w-12 items-center justify-center bg-opacity-50 bg-gradient-to-r from-white from-50% to-transparent px-3 transition duration-500 hover:cursor-pointer z-10`}>
-                  <div className="flex h-6 w-6 items-center justify-center rounded-full border-2 border-slate-400">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-4 w-4 text-slate-400">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
-                    </svg>
-                  </div>
-                </button>
-                <button onClick={() => onClick("right")} className="flex h-full w-12 items-center justify-center bg-opacity-50 bg-gradient-to-l from-white from-50% to-transparent px-3 transition duration-500 hover:cursor-pointer z-10">
-                  <div className="flex h-6 w-6 items-center justify-center rounded-full border-2 border-slate-400">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-4 w-4 text-slate-400">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                    </svg>
-                  </div>
-                </button>
-              </div>
-              <Categories style={style} categories={categories}/>
+              <Categories style={styled} categories={categories} nextBtn={() => onNext()} backBtn={() => onBack()} position={xPos} />
             </div>
           </div>
         </div>
