@@ -2,6 +2,7 @@
 
 import Categories from "@/app/components/categories";
 import {useEffect, useState} from "react";
+
 import {TbBeach, TbMountain, TbPool} from "react-icons/tb";
 import {
   GiBarn,
@@ -17,6 +18,7 @@ import {MdOutlineVilla} from "react-icons/md";
 import {FaSkiing} from "react-icons/fa";
 import {BsSnow} from "react-icons/bs";
 import {IoDiamond} from "react-icons/io5";
+import Slider from "@/app/components/slider";
 
 const Home = () => {
   const categories = [
@@ -132,7 +134,7 @@ const Home = () => {
       <div className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 py-6 sm:py-12">
         <img src="https://play.tailwindcss.com/img/beams.jpg" alt="" className="absolute left-1/2 top-1/2 max-w-none -translate-x-1/2 -translate-y-1/2" width="1308" />
         <div className="absolute inset-0 bg-[url(https://play.tailwindcss.com/img/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
-        <div className="relative w-[1000px] bg-white px-2 pb-8 pt-10 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-2xl sm:rounded-lg sm:px-2">
+        <div className="relative w-[1200px] bg-white px-2 pb-8 pt-10 shadow-xl ring-1 ring-gray-900/5 xl:w-xl lg:w-lg md:w-md sm:mx-auto sm:w-sm sm:rounded-lg sm:px-2">
           <div className="mx-auto w-full">
             <div className="flex w-full flex-row items-center justify-between border-b-2 border-slate-100 pb-8">
               <img src="https://play.tailwindcss.com/img/logo.svg" className="h-6 hover:cursor-pointer" alt="Tailwind Play" />
@@ -153,9 +155,10 @@ const Home = () => {
                 </button>
               </div>
             </div>
-            <div id="category_slider" className="relative flex w-full flex-row overflow-hidden py-4 pt-8">
+            <div className="relative flex w-full flex-row overflow-hidden py-4 pt-8 mb-8">
               <Categories style={styled} categories={categories} nextBtn={() => onNext()} backBtn={() => onBack()} position={xPos} maxWidth={maxWidth} />
             </div>
+            <Slider/>
           </div>
         </div>
       </div>

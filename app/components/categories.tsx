@@ -17,7 +17,7 @@ const Categories = ({style, nextBtn, backBtn, categories, position, maxWidth}: C
     const newStyle = {transform: `translateX(${position}px)`}
 
     return (
-        <div>
+        <>
             <div className="absolute flex h-[45px] w-full flex-row items-center justify-between">
                 <Btn direction="left" onClick={backBtn} position={position} maxWidth={maxWidth} />
                 <Btn direction="right" onClick={nextBtn} position={position} maxWidth={maxWidth} />
@@ -29,7 +29,7 @@ const Categories = ({style, nextBtn, backBtn, categories, position, maxWidth}: C
                     ))
                 }
             </ul>
-        </div>
+        </>
     );
 }
 
