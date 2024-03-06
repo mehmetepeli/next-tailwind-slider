@@ -10,15 +10,17 @@ interface CategoriesProps {
     nextBtn: () => void;
     backBtn: () => void;
     position: number;
+    maxWidth: number;
 }
 
-const Categories = ({style, nextBtn, backBtn, categories, position}: CategoriesProps) => {
+const Categories = ({style, nextBtn, backBtn, categories, position, maxWidth}: CategoriesProps) => {
     const newStyle = {transform: `translateX(${position}px)`}
+
     return (
         <div>
             <div className="absolute flex h-[45px] w-full flex-row items-center justify-between">
-                <Btn direction="left" onClick={backBtn} position={position} />
-                <Btn direction="right" onClick={nextBtn} position={position} />
+                <Btn direction="left" onClick={backBtn} position={position} maxWidth={maxWidth} />
+                <Btn direction="right" onClick={nextBtn} position={position} maxWidth={maxWidth} />
             </div>
             <ul id="category-slider" className="flex flex-row transition duration-300" style={newStyle}>
                 {

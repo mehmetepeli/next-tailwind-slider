@@ -2,13 +2,14 @@
 
 interface BtnProps {
     direction?: string;
-    position?: number;
+    position: number;
+    maxWidth: number;
     onClick?: () => void;
 }
 
-const Btn = ({direction,position,onClick}: BtnProps) => {
+const Btn = ({direction,position,maxWidth,onClick}: BtnProps) => {
     return (
-        <button onClick={onClick} className={`${(position === 0 && direction === 'left') ? 'invisible' : 'visible'} ${(position === -420 && direction === 'right') ? 'invisible' : 'visible'} flex h-full w-12 items-center justify-center bg-opacity-50 ${(direction === 'left') ? 'bg-gradient-to-r' : 'bg-gradient-to-l'} from-white from-50% to-transparent px-3 transition duration-500 hover:cursor-pointer z-10`}>
+        <button onClick={onClick} className={`${((position === 0 && direction === 'left') || (position === -maxWidth && direction === 'right')) ? 'invisible' : 'visible'} ${(position === -420 && direction === 'right') ? 'invisible' : 'visible'} flex h-full w-12 items-center justify-center bg-opacity-50 ${(direction === 'left') ? 'bg-gradient-to-r' : 'bg-gradient-to-l'} from-white from-50% to-transparent px-3 transition duration-500 hover:cursor-pointer z-10`}>
             <div className="flex h-6 w-6 items-center justify-center rounded-full border-2 border-slate-400">
                 {
                     (direction === "left") && (

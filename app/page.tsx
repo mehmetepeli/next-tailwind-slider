@@ -98,22 +98,35 @@ const Home = () => {
   ];
   const [xPos, setXpos] = useState(0);
   const [styled, setStyled] = useState({transform: `translateX(${xPos}px)`});
-  const maxCategoryWith = (categories.length) * 70;
-  const onBack =  () => {
-      if(xPos !== 0) {
-        setXpos(x => x + 70)
-      }
-      setStyled({transform: `translateX(${xPos}px)`});
-      return true;
-  }
+  const [maxWidth, setMaxWidth] = useState(0);
 
-  const onNext =  () => {
-    if(xPos !== maxCategoryWith && xPos <= maxCategoryWith) {
-      setXpos(x => x - 70)
+  const onBack =  () => {
+    if(xPos !== 0) {
+      setXpos(x => x + 88)
     }
     setStyled({transform: `translateX(${xPos}px)`});
     return true;
   }
+
+  const onNext =  () => {
+    if(xPos !== maxWidth && xPos <= maxWidth) {
+      setXpos(x => x - 88)
+    }
+    setStyled({transform: `translateX(${xPos}px)`});
+    return true;
+  }
+
+  useEffect(() => {
+    const sliderBox = document.querySelector("#category_slider");
+    const sliderCount = categories.length;
+    let sliderBoxWidth = 0;
+
+    if (sliderBox) {
+      sliderBoxWidth = sliderBox.clientWidth;
+      const sliderVisibleItem = Math.round(sliderBoxWidth / 88);
+      setMaxWidth((sliderCount - sliderVisibleItem) * 88);
+    }
+  }, [onBack,onNext]);
 
   return (
       <div className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 py-6 sm:py-12">
@@ -140,8 +153,8 @@ const Home = () => {
                 </button>
               </div>
             </div>
-            <div className="relative flex w-full flex-row overflow-hidden py-4 pt-8">
-              <Categories style={styled} categories={categories} nextBtn={() => onNext()} backBtn={() => onBack()} position={xPos} />
+            <div id="category_slider" className="relative flex w-full flex-row overflow-hidden py-4 pt-8">
+              <Categories style={styled} categories={categories} nextBtn={() => onNext()} backBtn={() => onBack()} position={xPos} maxWidth={maxWidth} />
             </div>
           </div>
         </div>
