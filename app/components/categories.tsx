@@ -22,7 +22,7 @@ const Categories = ({style, nextBtn, backBtn, categories, position, maxWidth}: C
                 <Btn direction="left" onClick={backBtn} position={position} maxWidth={maxWidth} />
                 <Btn direction="right" onClick={nextBtn} position={position} maxWidth={maxWidth} />
             </div>
-            <ul id="category-slider" className="flex flex-row transition duration-300" style={newStyle}>
+            <ul className="flex flex-row transition duration-300" style={newStyle}>
                 {
                     categories.map((item:any) => (
                         <CategoryBox key={item.label} icon={item.icon} label={item.label}/>

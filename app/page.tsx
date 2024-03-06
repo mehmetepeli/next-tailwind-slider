@@ -155,7 +155,7 @@ const Home = () => {
                 </button>
               </div>
             </div>
-            <div className="relative flex w-full flex-row overflow-hidden py-4 pt-8 mb-8">
+            <div id="category_slider" className="relative flex w-full flex-row overflow-hidden py-4 pt-8 mb-8">
               <Categories style={styled} categories={categories} nextBtn={() => onNext()} backBtn={() => onBack()} position={xPos} maxWidth={maxWidth} />
             </div>
             <Slider/>
