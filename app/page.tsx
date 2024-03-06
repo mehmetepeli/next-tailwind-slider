@@ -134,9 +134,9 @@ const Home = () => {
       <div className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 py-6 sm:py-12">
         <img src="https://play.tailwindcss.com/img/beams.jpg" alt="" className="absolute left-1/2 top-1/2 max-w-none -translate-x-1/2 -translate-y-1/2" width="1308" />
         <div className="absolute inset-0 bg-[url(https://play.tailwindcss.com/img/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
-        <div className="relative w-[1200px] bg-white px-2 pb-8 pt-10 shadow-xl ring-1 ring-gray-900/5 xl:w-xl lg:w-lg md:w-md sm:mx-auto sm:w-sm sm:rounded-lg sm:px-2">
+        <div className="relative w-[1200px] bg-white pb-8 pt-10 shadow-xl ring-1 ring-gray-900/5 xl:w-xl lg:w-lg md:w-md sm:mx-auto sm:w-sm sm:rounded-lg">
           <div className="mx-auto w-full">
-            <div className="flex w-full flex-row items-center justify-between border-b-2 border-slate-100 pb-8">
+            <div className="flex w-full flex-row items-center justify-between px-2 border-b-2 border-slate-100 pb-8">
               <img src="https://play.tailwindcss.com/img/logo.svg" className="h-6 hover:cursor-pointer" alt="Tailwind Play" />
               <div className="flex min-w-52 justify-between text-sm">
                 <button className="flex w-auto flex-row items-center rounded-full border-2 border-black bg-black px-4 py-2 text-white transition duration-500 hover:border-2 hover:border-black hover:bg-white hover:text-black">
@@ -159,6 +159,9 @@ const Home = () => {
               <Categories style={styled} categories={categories} nextBtn={() => onNext()} backBtn={() => onBack()} position={xPos} maxWidth={maxWidth} />
             </div>
             <Slider/>
+            <div className="w-full h-[400px] bg-green-900">
+
+            </div>
           </div>
         </div>
       </div>

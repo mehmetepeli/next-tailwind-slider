@@ -13,7 +13,7 @@ const Slider = () => {
                     <h2 className="w-full font-light text-neutral-600 mt-2 mb-8">Easiest way to find your partner and more quick!</h2>
                     <SearchBox/>
                 </div>
-                <div className="w-[600px] h-[400px] absolute bottom-0 right-0">
+                <div className="w-[400px] h-[400px] absolute bottom-0 right-0">
                     <Image src="/woman.png" alt="woman" layout='fill' objectFit='contain'/>
                 </div>
             </div>
