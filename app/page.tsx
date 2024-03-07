@@ -20,6 +20,8 @@ import {BsSnow} from "react-icons/bs";
 import {IoDiamond} from "react-icons/io5";
 import Slider from "@/components/slider";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import Link from "next/link";
+import CategoryAdBox from "@/components/category-ad-box";
 
 const Home = () => {
   const categories = [
@@ -164,13 +166,30 @@ const Home = () => {
               ad
             </div>
             <div className="w-full h-[400px] my-6 px-4">
-              <Tabs defaultValue="account" className="w-[400px]">
-                <TabsList>
-                  <TabsTrigger value="account">Account</TabsTrigger>
-                  <TabsTrigger value="password">Password</TabsTrigger>
+              <Tabs defaultValue="account" className="w-full">
+                <TabsList className="flex flex-row justify-between">
+                  <div>
+                    <TabsTrigger value="account">Account</TabsTrigger>
+                    <TabsTrigger value="password">Password</TabsTrigger>
+                    <TabsTrigger value="profile">Profile</TabsTrigger>
+                    <TabsTrigger value="messages">Messages</TabsTrigger>
+                    <TabsTrigger value="requests">Requests</TabsTrigger>
+                  </div>
+
+                  <Link href="/">
+                    <h1 className="py-2 px-4 rounded-full text-sm text-white bg-orange-600">View All</h1>
+                  </Link>
                 </TabsList>
-                <TabsContent value="account">Make changes to your account here.</TabsContent>
+                <TabsContent value="account" className="grid gap-4 grid-cols-4 gap-x-4">
+                  <CategoryAdBox label="Beatiful Sea" image="https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?q=80&w=2946&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"/>
+                  <CategoryAdBox label="Los Angles" image="https://images.unsplash.com/flagged/photo-1575555201693-7cd442b8023f?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"/>
+                  <CategoryAdBox label="Barcelona" image="https://images.unsplash.com/photo-1583422409516-2895a77efded?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"/>
+                  <CategoryAdBox label="Istanbul" image="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?q=80&w=2549&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"/>
+                </TabsContent>
                 <TabsContent value="password">Change your password here.</TabsContent>
+                <TabsContent value="profile">You can see profile details.</TabsContent>
+                <TabsContent value="messages">Check your messages.</TabsContent>
+                <TabsContent value="requests">Check your friend requests.</TabsContent>
               </Tabs>
             </div>
           </div>
