@@ -166,10 +166,10 @@ const Home = () => {
               ad
             </div>
             <div className="w-full h-[400px] my-6 px-4">
-              <Tabs defaultValue="account" className="w-full">
+              <Tabs defaultValue="cities" className="w-full">
                 <TabsList className="flex flex-row justify-between">
                   <div>
-                    <TabsTrigger value="account">Account</TabsTrigger>
+                    <TabsTrigger value="cities">Cities</TabsTrigger>
                     <TabsTrigger value="password">Password</TabsTrigger>
                     <TabsTrigger value="profile">Profile</TabsTrigger>
                     <TabsTrigger value="messages">Messages</TabsTrigger>
@@ -180,11 +180,11 @@ const Home = () => {
                     <h1 className="py-2 px-4 rounded-full text-sm text-white bg-orange-600">View All</h1>
                   </Link>
                 </TabsList>
-                <TabsContent value="account" className="grid gap-4 grid-cols-4 gap-x-4">
-                  <CategoryAdBox label="Beatiful Sea" image="https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?q=80&w=2946&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"/>
-                  <CategoryAdBox label="Los Angles" image="https://images.unsplash.com/flagged/photo-1575555201693-7cd442b8023f?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"/>
-                  <CategoryAdBox label="Barcelona" image="https://images.unsplash.com/photo-1583422409516-2895a77efded?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"/>
-                  <CategoryAdBox label="Istanbul" image="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?q=80&w=2549&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"/>
+                <TabsContent value="cities" className="grid gap-4 grid-cols-4 gap-x-4">
+                  <CategoryAdBox label="Maldives" link="/city/maldives" image="https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?q=80&w=2946&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"/>
+                  <CategoryAdBox label="Los Angeles" link="/city/los-angeles" image="https://images.unsplash.com/flagged/photo-1575555201693-7cd442b8023f?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"/>
+                  <CategoryAdBox label="Barcelona" link="/city/barcelona" image="https://images.unsplash.com/photo-1583422409516-2895a77efded?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"/>
+                  <CategoryAdBox label="Istanbul" link="/city/istanbul" image="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?q=80&w=2549&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"/>
                 </TabsContent>
                 <TabsContent value="password">Change your password here.</TabsContent>
                 <TabsContent value="profile">You can see profile details.</TabsContent>
