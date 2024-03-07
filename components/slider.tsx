@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import SearchBox from "@/app/components/search-box";
+import SearchBox from "@/components/search-box";
 
 const Slider = () => {
     return (

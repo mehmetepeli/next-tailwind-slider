@@ -1,6 +1,6 @@
 "use client";
 
-import Categories from "@/app/components/categories";
+import Categories from "@/components/categories";
 import {useEffect, useState} from "react";
 
 import {TbBeach, TbMountain, TbPool} from "react-icons/tb";
@@ -18,7 +18,8 @@ import {MdOutlineVilla} from "react-icons/md";
 import {FaSkiing} from "react-icons/fa";
 import {BsSnow} from "react-icons/bs";
 import {IoDiamond} from "react-icons/io5";
-import Slider from "@/app/components/slider";
+import Slider from "@/components/slider";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 const Home = () => {
   const categories = [
@@ -160,7 +161,17 @@ const Home = () => {
             </div>
             <Slider/>
             <div className="w-full h-[400px] bg-green-900">
-
+              ad
+            </div>
+            <div className="w-full h-[400px] my-6 px-4">
+              <Tabs defaultValue="account" className="w-[400px]">
+                <TabsList>
+                  <TabsTrigger value="account">Account</TabsTrigger>
+                  <TabsTrigger value="password">Password</TabsTrigger>
+                </TabsList>
+                <TabsContent value="account">Make changes to your account here.</TabsContent>
+                <TabsContent value="password">Change your password here.</TabsContent>
+              </Tabs>
             </div>
           </div>
         </div>

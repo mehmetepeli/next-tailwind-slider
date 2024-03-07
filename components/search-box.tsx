@@ -1,6 +1,6 @@
 "use client";
 
-import Input from "@/app/components/Input";
+import Input from "@/components/Input";
 import {FieldValues, useForm} from "react-hook-form";
 import {BiSearch} from "react-icons/bi";
 

@@ -1,8 +1,8 @@
 "use client";
 
-import CategoryBox from "@/app/components/category-box";
+import CategoryBox from "@/components/category-box";
 import {useState} from "react";
-import Btn from "@/app/components/btn";
+import Btn from "@/components/btn";
 
 interface CategoriesProps {
     style: any;
