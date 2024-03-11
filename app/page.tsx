@@ -22,6 +22,23 @@ import Slider from "@/components/slider";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import Link from "next/link";
 import CategoryAdBox from "@/components/category-ad-box";
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuRadioItem,
+  DropdownMenuRadioGroup,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { TbWorld } from "react-icons/tb";
+import { IoIosArrowDown } from "react-icons/io";
+import {countryFlags} from "@/constants/country-flag";
+import Image from "next/image";
+import CountrySelection from "@/components/footer/CountrySelection";
+
 
 const Home = () => {
   const categories = [
@@ -104,6 +121,76 @@ const Home = () => {
   const [xPos, setXpos] = useState(0);
   const [styled, setStyled] = useState({transform: `translateX(${xPos}px)`});
   const [maxWidth, setMaxWidth] = useState(0);
+  const [lang, setLang] = useState('Dutch');
+  const [currency, setCurrency] = useState('Euro');
+  const [selectedCountry, setSelectedCountry] = useState('Netherlands');
+  const languages = [
+    {
+      id: 1,
+      title: 'Dutch',
+    },
+    {
+      id: 2,
+      title: 'English',
+    },
+    {
+      id: 3,
+      title: 'Turkish',
+    },
+    {
+      id: 4,
+      title: 'German',
+    },
+  ]
+  const currencies = [
+    {
+      id: 1,
+      title: 'Euro',
+      symbol: '€',
+    },
+    {
+      id: 2,
+      title: 'Dollar',
+      symbol: '$',
+    },
+    {
+      id: 3,
+      title: 'Lira',
+      symbol: '₺',
+    },
+    {
+      id: 4,
+      title: 'Pound',
+      symbol: '£',
+    },
+  ]
+  const countries = [
+    {
+      id: 1,
+      title: 'Netherlands',
+      code: 'nl',
+    },
+    {
+      id: 2,
+      title: 'United States',
+      code: 'us',
+    },
+    {
+      id: 3,
+      title: 'Turkey',
+      code: 'tr',
+    },
+    {
+      id: 4,
+      title: 'United Kingdom',
+      code: 'uk',
+    },
+    {
+      id: 5,
+      title: 'Germany',
+      code: 'de',
+    }
+  ]
 
   const onBack =  () => {
     if(xPos !== 0) {
@@ -191,6 +278,62 @@ const Home = () => {
                 <TabsContent value="messages">Check your messages.</TabsContent>
                 <TabsContent value="requests">Check your friend requests.</TabsContent>
               </Tabs>
+            </div>
+            <div className="w-full h-[400px] my-6 px-4 flex flex-row justify-end">
+              <div className="mr-4">
+                <CountrySelection type="language" label={lang} items={languages} isOpen={false}  onChange={(value) => setLang(value)}/>
+              </div>
+              <div className="mr-4">
+                <CountrySelection type="currency" label={currency} items={currencies} isOpen={false} onChange={(value) => setCurrency(value)}/>
+              </div>
+              <div>
+                <CountrySelection type="country" label={selectedCountry} items={countries} isOpen={false} onChange={(value) => setSelectedCountry(value)}/>
+                {/*<DropdownMenu>*/}
+                {/*  <DropdownMenuTrigger asChild>*/}
+                {/*    <Button variant="outline">*/}
+                {/*      <div className="w-3.5 h-3.5 mr-2 relative">*/}
+                {/*        <Image src={countryFlag(selectedCountry)} alt={selectedCountry} fill object-fit="contain" className="rounded-md"/>*/}
+                {/*      </div>*/}
+                {/*      {selectedCountry}*/}
+                {/*      <IoIosArrowDown className="ml-2" />*/}
+                {/*    </Button>*/}
+                {/*  </DropdownMenuTrigger>*/}
+                {/*  <DropdownMenuContent>*/}
+                {/*    <DropdownMenuRadioGroup value={selectedCountry} onValueChange={setSelectedCountry}>*/}
+                {/*      <DropdownMenuRadioItem value="Netherlands">*/}
+                {/*        <div className="w-3.5 h-3.5 mr-2 relative">*/}
+                {/*          <Image src={countryFlag('Netherlands')} alt={selectedCountry} fill object-fit="cover" className="rounded-md"/>*/}
+                {/*        </div>*/}
+                {/*        Netherlands*/}
+                {/*      </DropdownMenuRadioItem>*/}
+                {/*      <DropdownMenuRadioItem value="United States">*/}
+                {/*        <div className="w-3.5 h-3.5 mr-2 relative">*/}
+                {/*          <Image src={countryFlag('United States')} alt={selectedCountry} fill object-fit="cover" className="rounded-md"/>*/}
+                {/*        </div>*/}
+                {/*        USA*/}
+                {/*      </DropdownMenuRadioItem>*/}
+                {/*      <DropdownMenuRadioItem value="Turkey">*/}
+                {/*        <div className="w-3.5 h-3.5 mr-2 relative">*/}
+                {/*          <Image src={countryFlag('Turkey')} alt={selectedCountry} fill object-fit="cover" className="rounded-md"/>*/}
+                {/*        </div>*/}
+                {/*        Turkey*/}
+                {/*      </DropdownMenuRadioItem>*/}
+                {/*      <DropdownMenuRadioItem value="United Kingdom">*/}
+                {/*        <div className="w-3.5 h-3.5 mr-2 relative">*/}
+                {/*          <Image src={countryFlag('United Kingdom')} alt={selectedCountry} layout="fill" objectFit="cover" className="rounded-md"/>*/}
+                {/*        </div>*/}
+                {/*        United Kingdom*/}
+                {/*      </DropdownMenuRadioItem>*/}
+                {/*      <DropdownMenuRadioItem value="Germany">*/}
+                {/*        <div className="w-3.5 h-3.5 mr-2 relative">*/}
+                {/*          <Image src={countryFlag('Germany')} alt={selectedCountry} fill object-fit="cover" className="rounded-md"/>*/}
+                {/*        </div>*/}
+                {/*        Germany*/}
+                {/*      </DropdownMenuRadioItem>*/}
+                {/*    </DropdownMenuRadioGroup>*/}
+                {/*  </DropdownMenuContent>*/}
+                {/*</DropdownMenu>*/}
+              </div>
             </div>
           </div>
         </div>
