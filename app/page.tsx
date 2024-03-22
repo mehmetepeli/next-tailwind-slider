@@ -22,22 +22,48 @@ import Slider from "@/components/slider";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import Link from "next/link";
 import CategoryAdBox from "@/components/category-ad-box";
-import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuRadioItem,
-  DropdownMenuRadioGroup,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { TbWorld } from "react-icons/tb";
-import { IoIosArrowDown } from "react-icons/io";
-import {countryFlags} from "@/constants/country-flag";
-import Image from "next/image";
+
 import CountrySelection from "@/components/footer/CountrySelection";
+
+import { CaretSortIcon, CheckIcon } from "@radix-ui/react-icons"
+
+import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+} from "@/components/ui/command"
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+
+const frameworks = [
+  {
+    value: "next.js",
+    label: "Next.js",
+  },
+  {
+    value: "sveltekit",
+    label: "SvelteKit",
+  },
+  {
+    value: "nuxt.js",
+    label: "Nuxt.js",
+  },
+  {
+    value: "remix",
+    label: "Remix",
+  },
+  {
+    value: "astro",
+    label: "Astro",
+  },
+]
 
 
 const Home = () => {
@@ -192,6 +218,9 @@ const Home = () => {
     }
   ]
 
+  const [open, setOpen] = useState(false);
+  const [value, setValue] = useState("");
+
   const onBack =  () => {
     if(xPos !== 0) {
       setXpos(x => x + 88)
@@ -279,7 +308,50 @@ const Home = () => {
                 <TabsContent value="requests">Check your friend requests.</TabsContent>
               </Tabs>
             </div>
-            <div className="w-full h-[400px] my-6 px-4 flex flex-row justify-end">
+            <div className="w-full h-[100px] my-6 px-4 flex flex-row justify-end">
+              <Popover open={open} onOpenChange={setOpen}>
+                <PopoverTrigger asChild>
+                  <Button
+                      variant="outline"
+                      role="combobox"
+                      aria-expanded={open}
+                      className="w-[200px] justify-between"
+                  >
+                    {value
+                        ? frameworks.find((framework) => framework.value === value)?.label
+                        : "Select framework..."}
+                    <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                  </Button>
+                </PopoverTrigger>
+                <PopoverContent className="w-[200px] p-0">
+                  <Command>
+                    <CommandInput placeholder="Search framework..." className="h-9" />
+                    <CommandEmpty>No framework found.</CommandEmpty>
+                    <CommandGroup>
+                      {frameworks.map((framework) => (
+                          <CommandItem
+                              key={framework.value}
+                              value={framework.value}
+                              onSelect={(currentValue) => {
+                                setValue(currentValue === value ? "" : currentValue)
+                                setOpen(false)
+                              }}
+                          >
+                            {framework.label}
+                            <CheckIcon
+                                className={cn(
+                                    "ml-auto h-4 w-4",
+                                    value === framework.value ? "opacity-100" : "opacity-0"
+                                )}
+                            />
+                          </CommandItem>
+                      ))}
+                    </CommandGroup>
+                  </Command>
+                </PopoverContent>
+              </Popover>
+            </div>
+            <div className="w-full h-[100px] my-6 px-4 flex flex-row justify-end">
               <div className="mr-4">
                 <CountrySelection type="language" label={lang} items={languages} isOpen={false}  onChange={(value) => setLang(value)}/>
               </div>
@@ -288,51 +360,6 @@ const Home = () => {
               </div>
               <div>
                 <CountrySelection type="country" label={selectedCountry} items={countries} isOpen={false} onChange={(value) => setSelectedCountry(value)}/>
-                {/*<DropdownMenu>*/}
-                {/*  <DropdownMenuTrigger asChild>*/}
-                {/*    <Button variant="outline">*/}
-                {/*      <div className="w-3.5 h-3.5 mr-2 relative">*/}
-                {/*        <Image src={countryFlag(selectedCountry)} alt={selectedCountry} fill object-fit="contain" className="rounded-md"/>*/}
-                {/*      </div>*/}
-                {/*      {selectedCountry}*/}
-                {/*      <IoIosArrowDown className="ml-2" />*/}
-                {/*    </Button>*/}
-                {/*  </DropdownMenuTrigger>*/}
-                {/*  <DropdownMenuContent>*/}
-                {/*    <DropdownMenuRadioGroup value={selectedCountry} onValueChange={setSelectedCountry}>*/}
-                {/*      <DropdownMenuRadioItem value="Netherlands">*/}
-                {/*        <div className="w-3.5 h-3.5 mr-2 relative">*/}
-                {/*          <Image src={countryFlag('Netherlands')} alt={selectedCountry} fill object-fit="cover" className="rounded-md"/>*/}
-                {/*        </div>*/}
-                {/*        Netherlands*/}
-                {/*      </DropdownMenuRadioItem>*/}
-                {/*      <DropdownMenuRadioItem value="United States">*/}
-                {/*        <div className="w-3.5 h-3.5 mr-2 relative">*/}
-                {/*          <Image src={countryFlag('United States')} alt={selectedCountry} fill object-fit="cover" className="rounded-md"/>*/}
-                {/*        </div>*/}
-                {/*        USA*/}
-                {/*      </DropdownMenuRadioItem>*/}
-                {/*      <DropdownMenuRadioItem value="Turkey">*/}
-                {/*        <div className="w-3.5 h-3.5 mr-2 relative">*/}
-                {/*          <Image src={countryFlag('Turkey')} alt={selectedCountry} fill object-fit="cover" className="rounded-md"/>*/}
-                {/*        </div>*/}
-                {/*        Turkey*/}
-                {/*      </DropdownMenuRadioItem>*/}
-                {/*      <DropdownMenuRadioItem value="United Kingdom">*/}
-                {/*        <div className="w-3.5 h-3.5 mr-2 relative">*/}
-                {/*          <Image src={countryFlag('United Kingdom')} alt={selectedCountry} layout="fill" objectFit="cover" className="rounded-md"/>*/}
-                {/*        </div>*/}
-                {/*        United Kingdom*/}
-                {/*      </DropdownMenuRadioItem>*/}
-                {/*      <DropdownMenuRadioItem value="Germany">*/}
-                {/*        <div className="w-3.5 h-3.5 mr-2 relative">*/}
-                {/*          <Image src={countryFlag('Germany')} alt={selectedCountry} fill object-fit="cover" className="rounded-md"/>*/}
-                {/*        </div>*/}
-                {/*        Germany*/}
-                {/*      </DropdownMenuRadioItem>*/}
-                {/*    </DropdownMenuRadioGroup>*/}
-                {/*  </DropdownMenuContent>*/}
-                {/*</DropdownMenu>*/}
               </div>
             </div>
           </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from "next/image";
 import Link from "next/link";
+import {Badge} from "@/components/ui/badge";
 
 interface CategoryAdBoxProps {
     image: string;
@@ -10,7 +11,8 @@ interface CategoryAdBoxProps {
 
 const CategoryAdBox = ({image,label,link}: CategoryAdBoxProps) => {
     return (
-        <div className="shadow-xl rounded-md bg-white p-2 group">
+        <div className="shadow-xl rounded-md bg-white p-2 group relative">
+            <Badge className="absolute top-0 right-0 z-10" variant={"destructive"}><small>99+</small></Badge>
             <Link href={link}>
                 <div className="w-full h-36 relative overflow-hidden">
                     <Image src={image} alt={label} layout='fill' objectFit="cover" className="rounded-md"/>
