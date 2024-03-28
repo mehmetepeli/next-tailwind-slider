@@ -41,6 +41,14 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+import {ChevronDown} from "lucide-react";
+import * as React from "react";
 
 const frameworks = [
   {
@@ -64,7 +72,6 @@ const frameworks = [
     label: "Astro",
   },
 ]
-
 
 const Home = () => {
   const categories = [
@@ -350,6 +357,274 @@ const Home = () => {
                   </Command>
                 </PopoverContent>
               </Popover>
+            </div>
+            <div className="w-full h-auto px-4 mb-20">
+              <Accordion type="single" collapsible className="w-full grid grid-cols-4 gap-4">
+                <AccordionItem value="item-1" className="mb-4">
+                  <AccordionTrigger className="flex flex-row relative p-0 rounded-lg shadow-md">
+                    <p className="w-full h-full flex items-center pl-4 absolute text-black">Canyon</p>
+                    <div className="w-full h-full bg-gray-100 rounded-lg">
+                      <div className="w-full h-20 header_test flex items-center rounded-lg text-black bg-cover bg-[url(https://images.pexels.com/photos/19210730/pexels-photo-19210730/free-photo-of-gorsa-bridge-en-norvege-vue-de-drone-chute-d-eau-montagne-pont.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)] bg-center ">
+                      </div>
+                    </div>
+                    <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 absolute top-8 right-3 text-white" />
+                  </AccordionTrigger>
+                  <AccordionContent className="-mt-2 bg-gray-100 rounded-b-lg p-4">
+                    <ul className="w-full mt-2 grid grid-cols-2 gap-2">
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-2" className="mb-4">
+                  <AccordionTrigger className="flex flex-row relative p-0 rounded-lg shadow-md">
+                    <p className="w-full h-full flex items-center pl-4 absolute text-black">Istanbul</p>
+                    <div className="w-full h-full bg-gray-100 rounded-lg">
+                      <div className="w-full h-20 header_test flex items-center rounded-lg text-black bg-cover bg-[url(https://images.pexels.com/photos/14963976/pexels-photo-14963976/free-photo-of-boats-on-bay-istambul-turkey.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)] bg-center ">
+                      </div>
+                    </div>
+                    <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 absolute top-8 right-3 text-white" />
+                  </AccordionTrigger>
+                  <AccordionContent className="-mt-2 bg-gray-100 rounded-b-lg p-4">
+                    <ul className="w-full mt-2 grid grid-cols-2 gap-2">
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-3" className="mb-4">
+                  <AccordionTrigger className="flex flex-row relative p-0 rounded-lg shadow-md">
+                    <p className="w-full h-full flex items-center pl-4 absolute text-black">Rotterdam</p>
+                    <div className="w-full h-full bg-gray-100 rounded-lg">
+                      <div className="w-full h-20 header_test flex items-center rounded-lg text-black bg-cover bg-[url(https://images.pexels.com/photos/11387333/pexels-photo-11387333.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)] bg-center ">
+                      </div>
+                    </div>
+                    <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 absolute top-8 right-3 text-white" />
+                  </AccordionTrigger>
+                  <AccordionContent className="-mt-2 bg-gray-100 rounded-b-lg p-4">
+                    <ul className="w-full mt-2 grid grid-cols-2 gap-2">
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-4" className="mb-4">
+                  <AccordionTrigger className="flex flex-row relative p-0 rounded-lg shadow-md">
+                    <p className="w-full h-full flex items-center pl-4 absolute text-black">Barcelona</p>
+                    <div className="w-full h-full bg-gray-100 rounded-lg">
+                      <div className="w-full h-20 header_test flex items-center rounded-lg text-black bg-cover bg-[url(https://images.pexels.com/photos/5282585/pexels-photo-5282585.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)] bg-center ">
+                      </div>
+                    </div>
+                    <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 absolute top-8 right-3 text-white" />
+                  </AccordionTrigger>
+                  <AccordionContent className="-mt-2 bg-gray-100 rounded-b-lg p-4">
+                    <ul className="w-full mt-2 grid grid-cols-2 gap-2">
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-5" className="mb-4">
+                  <AccordionTrigger className="flex flex-row relative p-0 rounded-lg shadow-md">
+                    <p className="w-full h-full flex items-center pl-4 absolute text-black">Maldives</p>
+                    <div className="w-full h-full bg-gray-100 rounded-lg">
+                      <div className="w-full h-20 header_test flex items-center rounded-lg text-black bg-cover bg-[url(https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?q=80&w=2946&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-center ">
+                      </div>
+                    </div>
+                    <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 absolute top-8 right-3 text-white" />
+                  </AccordionTrigger>
+                  <AccordionContent className="-mt-2 bg-gray-100 rounded-b-lg p-4">
+                    <ul className="w-full mt-2 grid grid-cols-2 gap-2">
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-6" className="mb-4">
+                  <AccordionTrigger className="flex flex-row relative p-0 rounded-lg shadow-md">
+                    <p className="w-full h-full flex items-center pl-4 absolute text-black">Tokyo</p>
+                    <div className="w-full h-full bg-gray-100 rounded-lg">
+                      <div className="w-full h-20 header_test flex items-center rounded-lg text-black bg-cover bg-[url(https://images.pexels.com/photos/2506923/pexels-photo-2506923.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)] bg-center ">
+                      </div>
+                    </div>
+                    <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 absolute top-8 right-3 text-white" />
+                  </AccordionTrigger>
+                  <AccordionContent className="-mt-2 bg-gray-100 rounded-b-lg p-4">
+                    <ul className="w-full mt-2 grid grid-cols-2 gap-2">
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-7" className="mb-4">
+                  <AccordionTrigger className="flex flex-row relative p-0 rounded-lg shadow-md">
+                    <p className="w-full h-full flex items-center pl-4 absolute text-black">Los Angeles</p>
+                    <div className="w-full h-full bg-gray-100 rounded-lg">
+                      <div className="w-full h-20 header_test flex items-center rounded-lg text-black bg-cover bg-[url(https://images.unsplash.com/flagged/photo-1575555201693-7cd442b8023f?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-center ">
+                      </div>
+                    </div>
+                    <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 absolute top-8 right-3 text-white" />
+                  </AccordionTrigger>
+                  <AccordionContent className="-mt-2 bg-gray-100 rounded-b-lg p-4">
+                    <ul className="w-full mt-2 grid grid-cols-2 gap-2">
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-8" className="mb-4">
+                  <AccordionTrigger className="flex flex-row relative p-0 rounded-lg shadow-md">
+                    <p className="w-full h-full flex items-center pl-4 absolute text-black">Rio de Janeiro</p>
+                    <div className="w-full h-full bg-gray-100 rounded-lg">
+                      <div className="w-full h-20 header_test flex items-center rounded-lg text-black bg-cover bg-[url(https://images.pexels.com/photos/13911606/pexels-photo-13911606.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)] bg-center ">
+                      </div>
+                    </div>
+                    <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 absolute top-8 right-3 text-white" />
+                  </AccordionTrigger>
+                  <AccordionContent className="-mt-2 bg-gray-100 rounded-b-lg p-4">
+                    <ul className="w-full mt-2 grid grid-cols-2 gap-2">
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-9" className="mb-4">
+                  <AccordionTrigger className="flex flex-row relative p-0 rounded-lg shadow-md">
+                    <p className="w-full h-full flex items-center pl-4 absolute text-black">Munich</p>
+                    <div className="w-full h-full bg-gray-100 rounded-lg">
+                      <div className="w-full h-20 header_test flex items-center rounded-lg text-black bg-cover bg-[url(https://images.pexels.com/photos/163405/munich-olympia-mountain-olympic-stadium-view-163405.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)] bg-center ">
+                      </div>
+                    </div>
+                    <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 absolute top-8 right-3 text-white" />
+                  </AccordionTrigger>
+                  <AccordionContent className="-mt-2 bg-gray-100 rounded-b-lg p-4">
+                    <ul className="w-full mt-2 grid grid-cols-2 gap-2">
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-10" className="mb-4">
+                  <AccordionTrigger className="flex flex-row relative p-0 rounded-lg shadow-md">
+                    <p className="w-full h-full flex items-center pl-4 absolute text-black">Paris</p>
+                    <div className="w-full h-full bg-gray-100 rounded-lg">
+                      <div className="w-full h-20 header_test flex items-center rounded-lg text-black bg-cover bg-[url(https://images.pexels.com/photos/2738173/pexels-photo-2738173.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)] bg-center ">
+                      </div>
+                    </div>
+                    <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 absolute top-8 right-3 text-white" />
+                  </AccordionTrigger>
+                  <AccordionContent className="-mt-2 bg-gray-100 rounded-b-lg p-4">
+                    <ul className="w-full mt-2 grid grid-cols-2 gap-2">
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-11" className="mb-4">
+                  <AccordionTrigger className="flex flex-row relative p-0 rounded-lg shadow-md">
+                    <p className="w-full h-full flex items-center pl-4 absolute text-black">Brussels</p>
+                    <div className="w-full h-full bg-gray-100 rounded-lg">
+                      <div className="w-full h-20 header_test flex items-center rounded-lg text-black bg-cover bg-[url(https://images.pexels.com/photos/16922920/pexels-photo-16922920/free-photo-of-ornamented-tenements-in-brussels.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)] bg-center ">
+                      </div>
+                    </div>
+                    <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 absolute top-8 right-3 text-white" />
+                  </AccordionTrigger>
+                  <AccordionContent className="-mt-2 bg-gray-100 rounded-b-lg p-4">
+                    <ul className="w-full mt-2 grid grid-cols-2 gap-2">
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-12" className="mb-4">
+                  <AccordionTrigger className="flex flex-row relative p-0 rounded-lg shadow-md">
+                    <p className="w-full h-full flex items-center pl-4 absolute text-black">Moscow</p>
+                    <div className="w-full h-full bg-gray-100 rounded-lg">
+                      <div className="w-full h-20 header_test flex items-center rounded-lg text-black bg-cover bg-[url(https://images.pexels.com/photos/12369260/pexels-photo-12369260.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)] bg-center ">
+                      </div>
+                    </div>
+                    <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 absolute top-8 right-3 text-white" />
+                  </AccordionTrigger>
+                  <AccordionContent className="-mt-2 bg-gray-100 rounded-b-lg p-4">
+                    <ul className="w-full mt-2 grid grid-cols-2 gap-2">
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                      <li><Link href="/">City test</Link></li>
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </div>
             <div className="w-full h-[100px] my-6 px-4 flex flex-row justify-end">
               <div className="mr-4">
