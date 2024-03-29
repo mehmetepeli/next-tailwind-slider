@@ -367,7 +367,6 @@ const Home = () => {
                       <div className="w-full h-20 header_test flex items-center rounded-lg text-black bg-cover bg-[url(https://images.pexels.com/photos/19210730/pexels-photo-19210730/free-photo-of-gorsa-bridge-en-norvege-vue-de-drone-chute-d-eau-montagne-pont.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)] bg-center ">
                       </div>
                     </div>
-                    <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 absolute top-8 right-3 text-white" />
                   </AccordionTrigger>
                   <AccordionContent className="-mt-2 bg-gray-100 rounded-b-lg p-4">
                     <ul className="w-full mt-2 grid grid-cols-2 gap-2">
@@ -389,7 +388,6 @@ const Home = () => {
                       <div className="w-full h-20 header_test flex items-center rounded-lg text-black bg-cover bg-[url(https://images.pexels.com/photos/14963976/pexels-photo-14963976/free-photo-of-boats-on-bay-istambul-turkey.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)] bg-center ">
                       </div>
                     </div>
-                    <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 absolute top-8 right-3 text-white" />
                   </AccordionTrigger>
                   <AccordionContent className="-mt-2 bg-gray-100 rounded-b-lg p-4">
                     <ul className="w-full mt-2 grid grid-cols-2 gap-2">
@@ -411,7 +409,6 @@ const Home = () => {
                       <div className="w-full h-20 header_test flex items-center rounded-lg text-black bg-cover bg-[url(https://images.pexels.com/photos/11387333/pexels-photo-11387333.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)] bg-center ">
                       </div>
                     </div>
-                    <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 absolute top-8 right-3 text-white" />
                   </AccordionTrigger>
                   <AccordionContent className="-mt-2 bg-gray-100 rounded-b-lg p-4">
                     <ul className="w-full mt-2 grid grid-cols-2 gap-2">
@@ -433,7 +430,6 @@ const Home = () => {
                       <div className="w-full h-20 header_test flex items-center rounded-lg text-black bg-cover bg-[url(https://images.pexels.com/photos/5282585/pexels-photo-5282585.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)] bg-center ">
                       </div>
                     </div>
-                    <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 absolute top-8 right-3 text-white" />
                   </AccordionTrigger>
                   <AccordionContent className="-mt-2 bg-gray-100 rounded-b-lg p-4">
                     <ul className="w-full mt-2 grid grid-cols-2 gap-2">
@@ -455,7 +451,6 @@ const Home = () => {
                       <div className="w-full h-20 header_test flex items-center rounded-lg text-black bg-cover bg-[url(https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?q=80&w=2946&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-center ">
                       </div>
                     </div>
-                    <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 absolute top-8 right-3 text-white" />
                   </AccordionTrigger>
                   <AccordionContent className="-mt-2 bg-gray-100 rounded-b-lg p-4">
                     <ul className="w-full mt-2 grid grid-cols-2 gap-2">
@@ -477,7 +472,6 @@ const Home = () => {
                       <div className="w-full h-20 header_test flex items-center rounded-lg text-black bg-cover bg-[url(https://images.pexels.com/photos/2506923/pexels-photo-2506923.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)] bg-center ">
                       </div>
                     </div>
-                    <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 absolute top-8 right-3 text-white" />
                   </AccordionTrigger>
                   <AccordionContent className="-mt-2 bg-gray-100 rounded-b-lg p-4">
                     <ul className="w-full mt-2 grid grid-cols-2 gap-2">
@@ -499,7 +493,6 @@ const Home = () => {
                       <div className="w-full h-20 header_test flex items-center rounded-lg text-black bg-cover bg-[url(https://images.unsplash.com/flagged/photo-1575555201693-7cd442b8023f?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-center ">
                       </div>
                     </div>
-                    <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 absolute top-8 right-3 text-white" />
                   </AccordionTrigger>
                   <AccordionContent className="-mt-2 bg-gray-100 rounded-b-lg p-4">
                     <ul className="w-full mt-2 grid grid-cols-2 gap-2">
@@ -521,7 +514,6 @@ const Home = () => {
                       <div className="w-full h-20 header_test flex items-center rounded-lg text-black bg-cover bg-[url(https://images.pexels.com/photos/13911606/pexels-photo-13911606.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)] bg-center ">
                       </div>
                     </div>
-                    <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 absolute top-8 right-3 text-white" />
                   </AccordionTrigger>
                   <AccordionContent className="-mt-2 bg-gray-100 rounded-b-lg p-4">
                     <ul className="w-full mt-2 grid grid-cols-2 gap-2">
@@ -543,7 +535,6 @@ const Home = () => {
                       <div className="w-full h-20 header_test flex items-center rounded-lg text-black bg-cover bg-[url(https://images.pexels.com/photos/163405/munich-olympia-mountain-olympic-stadium-view-163405.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)] bg-center ">
                       </div>
                     </div>
-                    <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 absolute top-8 right-3 text-white" />
                   </AccordionTrigger>
                   <AccordionContent className="-mt-2 bg-gray-100 rounded-b-lg p-4">
                     <ul className="w-full mt-2 grid grid-cols-2 gap-2">
@@ -565,7 +556,6 @@ const Home = () => {
                       <div className="w-full h-20 header_test flex items-center rounded-lg text-black bg-cover bg-[url(https://images.pexels.com/photos/2738173/pexels-photo-2738173.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)] bg-center ">
                       </div>
                     </div>
-                    <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 absolute top-8 right-3 text-white" />
                   </AccordionTrigger>
                   <AccordionContent className="-mt-2 bg-gray-100 rounded-b-lg p-4">
                     <ul className="w-full mt-2 grid grid-cols-2 gap-2">
@@ -587,7 +577,6 @@ const Home = () => {
                       <div className="w-full h-20 header_test flex items-center rounded-lg text-black bg-cover bg-[url(https://images.pexels.com/photos/16922920/pexels-photo-16922920/free-photo-of-ornamented-tenements-in-brussels.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)] bg-center ">
                       </div>
                     </div>
-                    <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 absolute top-8 right-3 text-white" />
                   </AccordionTrigger>
                   <AccordionContent className="-mt-2 bg-gray-100 rounded-b-lg p-4">
                     <ul className="w-full mt-2 grid grid-cols-2 gap-2">
@@ -609,7 +598,6 @@ const Home = () => {
                       <div className="w-full h-20 header_test flex items-center rounded-lg text-black bg-cover bg-[url(https://images.pexels.com/photos/12369260/pexels-photo-12369260.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)] bg-center ">
                       </div>
                     </div>
-                    <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 absolute top-8 right-3 text-white" />
                   </AccordionTrigger>
                   <AccordionContent className="-mt-2 bg-gray-100 rounded-b-lg p-4">
                     <ul className="w-full mt-2 grid grid-cols-2 gap-2">
