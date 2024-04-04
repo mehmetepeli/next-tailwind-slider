@@ -49,6 +49,11 @@ import {
 } from "@/components/ui/accordion"
 import {ChevronDown} from "lucide-react";
 import * as React from "react";
+import * as z from "zod";
+import {useForm} from "react-hook-form";
+import {zodResolver} from "@hookform/resolvers/zod";
+import {signUpSchema} from "@/lib/validation";
+import {signUpForm} from "@/lib/types";
 
 const frameworks = [
   {
@@ -243,6 +248,41 @@ const Home = () => {
     setStyled({transform: `translateX(${xPos}px)`});
     return true;
   }
+
+  const signUpSchemaTemplate = signUpSchema;
+
+  type signUpType = signUpForm;
+
+  //type 1
+  const {
+    register,
+    handleSubmit,
+    formState: {errors, isSubmitting},
+    reset
+  } = useForm<signUpType>({
+    resolver: zodResolver(signUpSchemaTemplate)
+  });
+
+  //type 2
+  const form = useForm<signUpType>({
+    resolver: zodResolver(signUpSchemaTemplate),
+    defaultValues: {
+      email: "",
+      password: "",
+      confirmPassword: ""
+    }
+  });
+
+  const onSubmit = async (data: signUpType) => {
+    //do something
+    console.log(signUpSchemaTemplate.safeParse(data))
+  }
+
+  const secondOnSubmit = async (values: signUpType) => {
+    console.log("second hi")
+  }
+
+  const isLoading = isSubmitting
 
   useEffect(() => {
     const sliderBox = document.querySelector("#category_slider");
@@ -624,6 +664,27 @@ const Home = () => {
               <div>
                 <CountrySelection type="country" label={selectedCountry} items={countries} isOpen={false} onChange={(value) => setSelectedCountry(value)}/>
               </div>
+            </div>
+            <div className="w-full h-auto px-4">
+              <form onSubmit={handleSubmit(onSubmit)}>
+                <input {...register("email")} type="email" placeholder="E-Mail" disabled={isSubmitting}/>
+                {errors.email && (<p>{`${errors.email.message}`}</p>)}
+                <input {...register("password")} type="password" placeholder="Password"/>
+                {errors.password && (<p>{`${errors.password.message}`}</p>)}
+                <input {...register("confirmPassword")} type="password" placeholder="Confirm Password"/>
+                {errors.confirmPassword && (<p>{`${errors.confirmPassword.message}`}</p>)}
+                <button type="submit">send</button>
+              </form>
+
+              {/*<form onSubmit={form.handleSubmit(secondOnSubmit)}>*/}
+              {/*  <input {...register("email")} type="email" placeholder="E-Mail"/>*/}
+              {/*  {errors.email && (<p>{`${errors.email.message}`}</p>)}*/}
+              {/*  <input {...register("password")} type="password" placeholder="Password"/>*/}
+              {/*  {errors.password && (<p>{`${errors.password.message}`}</p>)}*/}
+              {/*  <input {...register("confirmPassword")} type="password" placeholder="Confirm Password"/>*/}
+              {/*  {errors.confirmPassword && (<p>{`${errors.confirmPassword.message}`}</p>)}*/}
+              {/*  <button type="submit">send</button>*/}
+              {/*</form>*/}
             </div>
           </div>
         </div>
