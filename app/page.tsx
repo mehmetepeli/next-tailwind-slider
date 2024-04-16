@@ -325,10 +325,10 @@ const Home = () => {
               <Categories style={styled} categories={categories} nextBtn={() => onNext()} backBtn={() => onBack()} position={xPos} maxWidth={maxWidth} />
             </div>
             <Slider/>
-            <div className="w-full h-[400px] bg-green-900">
+            <div className="w-full h-[200px] bg-green-900">
               ad
             </div>
-            <div className="w-full h-[400px] my-6 px-4">
+            <div className="w-full h-auto my-6 px-4">
               <Tabs defaultValue="cities" className="w-full">
                 <TabsList className="flex flex-row justify-between">
                   <div>
@@ -355,7 +355,7 @@ const Home = () => {
                 <TabsContent value="requests">Check your friend requests.</TabsContent>
               </Tabs>
             </div>
-            <div className="w-full h-[100px] my-6 px-4 flex flex-row justify-end">
+            <div className="w-full h-auto my-6 px-4 flex flex-row justify-end">
               <Popover open={open} onOpenChange={setOpen}>
                 <PopoverTrigger asChild>
                   <Button
@@ -398,7 +398,7 @@ const Home = () => {
                 </PopoverContent>
               </Popover>
             </div>
-            <div className="w-full h-auto px-4 mb-20">
+            <div className="w-full h-auto px-4 mb-8">
               <Accordion type="single" collapsible className="w-full grid grid-cols-4 gap-4">
                 <AccordionItem value="item-1" className="mb-4">
                   <AccordionTrigger className="flex flex-row relative p-0 rounded-lg shadow-md">
@@ -654,7 +654,7 @@ const Home = () => {
                 </AccordionItem>
               </Accordion>
             </div>
-            <div className="w-full h-[100px] my-6 px-4 flex flex-row justify-end">
+            <div className="w-full h-auto my-6 px-4 flex flex-row justify-end">
               <div className="mr-4">
                 <CountrySelection type="language" label={lang} items={languages} isOpen={false}  onChange={(value) => setLang(value)}/>
               </div>
