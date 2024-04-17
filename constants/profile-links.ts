@@ -3,6 +3,7 @@ import {PiCampfireBold, PiHandHeartBold, PiSignOutBold} from "react-icons/pi";
 import {FaPeopleGroup} from "react-icons/fa6";
 import {LuPartyPopper, LuSettings} from "react-icons/lu";
 import {BsWindowDesktop} from "react-icons/bs";
+import {IoStatsChartSharp} from "react-icons/io5";
 
 export const sideLinks = [
     {
@@ -35,6 +36,11 @@ export const sideLinks = [
         title: 'Community',
         slug: '/community',
         icon: PiCampfireBold,
+    },
+    {
+        title: 'Statistics',
+        slug: '/statistics',
+        icon: IoStatsChartSharp,
     },
     {
         title: 'Settings',

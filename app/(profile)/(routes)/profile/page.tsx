@@ -155,10 +155,34 @@ United States of America </span></p>
                         <LuSettings/>
                         <span className="ml-3">General</span>
                     </h4>
+                    <p className="text-sm mb-4">Please check your working status !</p>
+                    <div className="w-full flex flex-row mb-4">
+                        <div className="w-2/4 flex flex-row text-sm">
+                            <p className="w-2/4">
+                                <span>Change status</span>
+                            </p>
+                            <label className="w-2/4 switch">
+                                <input type="checkbox"/>
+                                <span className="slider round"></span>
+                            </label>
+                        </div>
+                        <div className="w-2/4 flex flex-row text-sm">
+                            <p className="w-2/4 flex flex-row items-center">
+                                <div className="w-3 h-3 mr-4 rounded-full bg-[#225243]"></div>
+                                <span>Available</span>
+                            </p>
+                            <p className="w-2/4 flex flex-row items-center">
+                                <div className="w-3 h-3 mr-4 rounded-full bg-[#c00]"></div>
+                                <span>Offline</span>
+                            </p>
+                        </div>
+                    </div>
+
                     <ul className="w-full flex flex-col text-sm font-medium">
-                        <li className="mb-2"><Link href="/profile" className="w-full flex flex-row items-center"><AiOutlineLike/> <span className="ml-3">Make Available</span></Link></li>
-                        <li className="mb-2"><Link href="/profile" className="w-full flex flex-row items-center"><AiOutlineLike/> <span className="ml-3">Languages / English - Bulgarian - Dutch</span></Link></li>
+                        <li className="mb-2">Languages / English - Bulgarian - Dutch</li>
+                        <li className="mb-2">Working categories / English - Bulgarian - Dutch</li>
                     </ul>
+
                 </div>
             </div>
         </div>
