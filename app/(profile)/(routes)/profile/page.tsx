@@ -17,10 +17,11 @@ import {donut_options, line_options, gauge_options} from '@/constants/options'
 
 const ProfilePage = () => {
     const donutData = donut_data;
-    const donutOptions = donut_options;
     const lineData = line_data;
-    const lineOptions = line_options;
     const gaugeData = gauge_data;
+
+    const donutOptions = donut_options;
+    const lineOptions = line_options;
     const gaugeOptions = gauge_options;
 
     return (
@@ -29,7 +30,7 @@ const ProfilePage = () => {
                 <div className="w-[70%] flex flex-col px-4 py-6">
                     <h3 className="mb-2 text-white font-bold">Please Confirm Your Email</h3>
                     <p className="text-white text-sm">
-                        To unlock full access to our platform, please confirm your email. If you haven't done
+                        To unlock full access to our platform, please confirm your email. If you havent done
                         so already, you can request another confirmation email by clicking the button to the right.
                     </p>
                 </div>
