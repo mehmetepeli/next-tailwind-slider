@@ -10,15 +10,27 @@ import Image from "next/image";
 import {AiOutlineLike, AiOutlineQuestion, AiOutlineQuestionCircle} from "react-icons/ai";
 import {BiSupport} from "react-icons/bi";
 import {GoPaperAirplane} from "react-icons/go";
+import '@carbon/charts-react/styles.css'
+import { DonutChart, LineChart, GaugeChart } from '@carbon/charts-react'
+import {donut_data, line_data, gauge_data} from '@/constants/data'
+import {donut_options, line_options, gauge_options} from '@/constants/options'
 
 const ProfilePage = () => {
+    const donutData = donut_data;
+    const lineData = line_data;
+    const gaugeData = gauge_data;
+
+    const donutOptions = donut_options;
+    const lineOptions = line_options;
+    const gaugeOptions = gauge_options;
+
     return (
         <div className="h-full">
             <div className="w-full h-32 mb-8 flex flex-row rounded-lg relative bg-gradient-to-r from-[#225243] to-[#008359] overflow-hidden">
                 <div className="w-[70%] flex flex-col px-4 py-6">
                     <h3 className="mb-2 text-white font-bold">Please Confirm Your Email</h3>
                     <p className="text-white text-sm">
-                        To unlock full access to our platform, please confirm your email. If you haven't done
+                        To unlock full access to our platform, please confirm your email. If you havent done
                         so already, you can request another confirmation email by clicking the button to the right.
                     </p>
                 </div>
@@ -45,6 +57,43 @@ United States of America </span></p>
                             <p className="w-full flex flex-row items-center"><span className="mr-2"><LuPhone/></span> <span>+31685987987</span></p>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <div className="w-full h-auto px-4 py-6 mt-8 flex flex-row rounded-lg border-[1px] border-[#eceeed] bg-[#fbfbfb]">
+                <div className="w-2/4">
+                    <DonutChart
+                        data={donutData}
+                        options={donutOptions}
+                    ></ DonutChart>
+                </div>
+                <div className="w-2/4">
+                    <DonutChart
+                        data={donutData}
+                        options={donutOptions}
+                    ></ DonutChart>
+                </div>
+            </div>
+
+            <div className="w-full h-auto px-4 py-6 mt-8 flex rounded-lg border-[1px] border-[#eceeed] bg-[#fbfbfb]">
+                <LineChart
+                    data={lineData}
+                    options={lineOptions}
+                ></ LineChart>
+            </div>
+
+            <div className="w-full h-auto px-4 py-6 mt-8 flex flex-row rounded-lg border-[1px] border-[#eceeed] bg-[#fbfbfb]">
+                <div className="w-2/4">
+                    <GaugeChart
+                    data={gaugeData}
+                    options={gaugeOptions}
+                    ></ GaugeChart>
+                </div>
+                <div className="w-2/4">
+                    <GaugeChart
+                        data={gaugeData}
+                        options={gaugeOptions}
+                    ></ GaugeChart>
                 </div>
             </div>
 
@@ -106,10 +155,34 @@ United States of America </span></p>
                         <LuSettings/>
                         <span className="ml-3">General</span>
                     </h4>
+                    <p className="text-sm mb-4">Please check your working status !</p>
+                    <div className="w-full flex flex-row mb-4">
+                        <div className="w-2/4 flex flex-row text-sm">
+                            <p className="w-2/4">
+                                <span>Change status</span>
+                            </p>
+                            <label className="w-2/4 switch">
+                                <input type="checkbox"/>
+                                <span className="slider round"></span>
+                            </label>
+                        </div>
+                        <div className="w-2/4 flex flex-row text-sm">
+                            <p className="w-2/4 flex flex-row items-center">
+                                <div className="w-3 h-3 mr-4 rounded-full bg-[#225243]"></div>
+                                <span>Available</span>
+                            </p>
+                            <p className="w-2/4 flex flex-row items-center">
+                                <div className="w-3 h-3 mr-4 rounded-full bg-[#c00]"></div>
+                                <span>Offline</span>
+                            </p>
+                        </div>
+                    </div>
+
                     <ul className="w-full flex flex-col text-sm font-medium">
-                        <li className="mb-2"><Link href="/profile" className="w-full flex flex-row items-center"><AiOutlineLike/> <span className="ml-3">Make Available</span></Link></li>
-                        <li className="mb-2"><Link href="/profile" className="w-full flex flex-row items-center"><AiOutlineLike/> <span className="ml-3">Languages / English - Bulgarian - Dutch</span></Link></li>
+                        <li className="mb-2">Languages / English - Bulgarian - Dutch</li>
+                        <li className="mb-2">Working categories / English - Bulgarian - Dutch</li>
                     </ul>
+
                 </div>
             </div>
         </div>

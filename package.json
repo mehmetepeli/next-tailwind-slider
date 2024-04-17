@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@carbon/charts-react": "^1.15.6",
+    "@carbon/react": "^1.55.0",
     "@hookform/resolvers": "^3.3.4",
     "@material-tailwind/react": "^2.1.9",
     "@radix-ui/react-accordion": "^1.1.2",
@@ -27,6 +29,7 @@
     "react-dom": "^18",
     "react-hook-form": "^7.51.0",
     "react-icons": "^5.0.1",
+    "sass": "^1.75.0",
     "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.22.4"
