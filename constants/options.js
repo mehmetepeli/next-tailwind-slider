@@ -13,26 +13,19 @@ export const donut_options = {
 // "toolbar": { "enabled": true, "controls": [ { "type": "Reset zoom" }, { "type": "Zoom in" }, { "type": "Zoom out" }, ], "numberOfIcons": 4 },
 
 export const line_options = {
-    title: 'Line + Line (dual axes)',
+    title: 'Line (discrete)',
     axes: {
-        left: {
-            title: 'Temperature (°C)',
-            mapsTo: 'temp'
-        },
         bottom: {
-            scaleType: 'time',
-            mapsTo: 'date',
-            title: 'Date'
+            title: '2019 Annual Sales Figures',
+            mapsTo: 'key',
+            scaleType: 'labels'
         },
-        right: {
-            title: 'Rainfall (mm)',
-            mapsTo: 'rainfall',
-            correspondingDatasets: [
-                'Rainfall'
-            ]
+        left: {
+            mapsTo: 'value',
+            title: 'Conversion rate',
+            scaleType: 'curve'
         }
     },
-    curve: 'curveMonotoneX',
     height: '400px',
     toolbar: { "enabled": false },
 }

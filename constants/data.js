@@ -31,74 +31,106 @@ export const donut_data = [
 
 export const line_data = [
     {
-        group: 'Temperature',
-        date: new Date(2019, 0, 1),
-        temp: 23
+        group: 'Dataset 1',
+        key: 'Qty',
+        value: 34200
     },
     {
-        group: 'Temperature',
-        date: new Date(2019, 1, 1),
-        temp: 15
+        group: 'Dataset 1',
+        key: 'More',
+        value: 23500
     },
     {
-        group: 'Temperature',
-        date: new Date(2019, 2, 1),
-        temp: 24
+        group: 'Dataset 1',
+        key: 'Sold',
+        value: 53100
     },
     {
-        group: 'Temperature',
-        date: new Date(2019, 3, 1),
-        temp: 33
+        group: 'Dataset 1',
+        key: 'Restocking',
+        value: 42300
     },
     {
-        group: 'Temperature',
-        date: new Date(2019, 4, 1),
-        temp: 23
+        group: 'Dataset 1',
+        key: 'Misc',
+        value: 12300
     },
     {
-        group: 'Temperature',
-        date: new Date(2019, 5, 1),
-        temp: 32
+        group: 'Dataset 2',
+        key: 'Qty',
+        value: 34200
     },
     {
-        group: 'Temperature',
-        date: new Date(2019, 6, 1),
-        temp: 23
+        group: 'Dataset 2',
+        key: 'More',
+        value: 53200
     },
     {
-        group: 'Rainfall',
-        date: new Date(2019, 0, 1),
-        rainfall: 50
+        group: 'Dataset 2',
+        key: 'Sold',
+        value: 42300
     },
     {
-        group: 'Rainfall',
-        date: new Date(2019, 1, 1),
-        rainfall: 65
+        group: 'Dataset 2',
+        key: 'Restocking',
+        value: 21400
     },
     {
-        group: 'Rainfall',
-        date: new Date(2019, 2, 1),
-        rainfall: 35
+        group: 'Dataset 2',
+        key: 'Misc',
+        value: 0
     },
     {
-        group: 'Rainfall',
-        date: new Date(2019, 3, 1),
-        rainfall: 43
+        group: 'Dataset 3',
+        key: 'Qty',
+        value: 41200
     },
     {
-        group: 'Rainfall',
-        date: new Date(2019, 4, 1),
-        rainfall: 53
+        group: 'Dataset 3',
+        key: 'More',
+        value: 18400
     },
     {
-        group: 'Rainfall',
-        date: new Date(2019, 5, 1),
-        rainfall: 19
+        group: 'Dataset 3',
+        key: 'Sold',
+        value: 34210
     },
     {
-        group: 'Rainfall',
-        date: new Date(2019, 6, 1),
-        rainfall: 13
+        group: 'Dataset 3',
+        key: 'Restocking',
+        value: 1400
+    },
+    {
+        group: 'Dataset 3',
+        key: 'Misc',
+        value: 42100
+    },
+    {
+        group: 'Dataset 4',
+        key: 'Qty',
+        value: 22000
+    },
+    {
+        group: 'Dataset 4',
+        key: 'More',
+        value: 1200
+    },
+    {
+        group: 'Dataset 4',
+        key: 'Sold',
+        value: 9000
+    },
+    {
+        group: 'Dataset 4',
+        key: 'Restocking',
+        value: 24000,
+        audienceSize: 10
+    },
+    {
+        group: 'Dataset 4',
+        key: 'Misc',
+        value: 3000,
+        audienceSize: 10
     }
 ];
 
