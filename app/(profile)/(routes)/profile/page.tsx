@@ -10,8 +10,19 @@ import Image from "next/image";
 import {AiOutlineLike, AiOutlineQuestion, AiOutlineQuestionCircle} from "react-icons/ai";
 import {BiSupport} from "react-icons/bi";
 import {GoPaperAirplane} from "react-icons/go";
+import '@carbon/charts-react/styles.css'
+import { DonutChart, LineChart, GaugeChart } from '@carbon/charts-react'
+import {donut_data, line_data, gauge_data} from '@/constants/data'
+import {donut_options, line_options, gauge_options} from '@/constants/options'
 
 const ProfilePage = () => {
+    const donutData = donut_data;
+    const donutOptions = donut_options;
+    const lineData = line_data;
+    const lineOptions = line_options;
+    const gaugeData = gauge_data;
+    const gaugeOptions = gauge_options;
+
     return (
         <div className="h-full">
             <div className="w-full h-32 mb-8 flex flex-row rounded-lg relative bg-gradient-to-r from-[#225243] to-[#008359] overflow-hidden">
@@ -45,6 +56,43 @@ United States of America </span></p>
                             <p className="w-full flex flex-row items-center"><span className="mr-2"><LuPhone/></span> <span>+31685987987</span></p>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <div className="w-full h-auto px-4 py-6 mt-8 flex flex-row rounded-lg border-[1px] border-[#eceeed] bg-[#fbfbfb]">
+                <div className="w-2/4">
+                    <DonutChart
+                        data={donutData}
+                        options={donutOptions}
+                    ></ DonutChart>
+                </div>
+                <div className="w-2/4">
+                    <DonutChart
+                        data={donutData}
+                        options={donutOptions}
+                    ></ DonutChart>
+                </div>
+            </div>
+
+            <div className="w-full h-auto px-4 py-6 mt-8 flex rounded-lg border-[1px] border-[#eceeed] bg-[#fbfbfb]">
+                <LineChart
+                    data={lineData}
+                    options={lineOptions}
+                ></ LineChart>
+            </div>
+
+            <div className="w-full h-auto px-4 py-6 mt-8 flex flex-row rounded-lg border-[1px] border-[#eceeed] bg-[#fbfbfb]">
+                <div className="w-2/4">
+                    <GaugeChart
+                    data={gaugeData}
+                    options={gaugeOptions}
+                    ></ GaugeChart>
+                </div>
+                <div className="w-2/4">
+                    <GaugeChart
+                        data={gaugeData}
+                        options={gaugeOptions}
+                    ></ GaugeChart>
                 </div>
             </div>
 
