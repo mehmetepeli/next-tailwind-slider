@@ -74,7 +74,7 @@ United States of America </span></p>
                             </h5>
                             <p className="w-full flex flex-row px-2 text-white">
                                 <span className="mr-1 font-bold text-md">$</span>
-                                <span className="font-bold r__font_size">300.85</span>
+                                <span className="font-bold r__font_size drop-shadow-md">300.85</span>
                             </p>
                         </div>
                         <div className="w-full flex flex-col mb-6">
@@ -85,7 +85,7 @@ United States of America </span></p>
                             </h5>
                             <p className="w-full flex flex-row px-2 text-white">
                                 <span className="mr-1 font-bold text-md">$</span>
-                                <span className="font-bold r__font_size">3,300.85</span>
+                                <span className="font-bold r__font_size drop-shadow-md">3,300.85</span>
                             </p>
                         </div>
                         <div className="w-full flex flex-col">
@@ -95,7 +95,7 @@ United States of America </span></p>
                             </h5>
                             <p className="w-full flex flex-row px-2 text-white">
                                 <span className="mr-1 font-bold text-md">$</span>
-                                <span className="font-bold r__font_size">36,999.85</span>
+                                <span className="font-bold r__font_size drop-shadow-md">36,999.85</span>
                             </p>
                         </div>
                     </div>
