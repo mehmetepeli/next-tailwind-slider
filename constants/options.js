@@ -26,6 +26,7 @@ export const line_options = {
             scaleType: 'linear'
         }
     },
+    curve: 'curveMonotoneX',
     height: '400px',
     toolbar: { "enabled": false },
 }
