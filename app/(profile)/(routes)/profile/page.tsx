@@ -65,13 +65,13 @@ United States of America </span></p>
                     <DonutChart
                         data={donutData}
                         options={donutOptions}
-                    ></ DonutChart>
+                    ></DonutChart>
                 </div>
                 <div className="w-2/4">
                     <DonutChart
                         data={donutData}
                         options={donutOptions}
-                    ></ DonutChart>
+                    ></DonutChart>
                 </div>
             </div>
 
@@ -79,7 +79,7 @@ United States of America </span></p>
                 <LineChart
                     data={lineData}
                     options={lineOptions}
-                ></ LineChart>
+                ></LineChart>
             </div>
 
             <div className="w-full h-auto px-4 py-6 mt-8 flex flex-row rounded-lg border-[1px] border-[#eceeed] bg-[#fbfbfb]">
@@ -87,13 +87,13 @@ United States of America </span></p>
                     <GaugeChart
                     data={gaugeData}
                     options={gaugeOptions}
-                    ></ GaugeChart>
+                    ></GaugeChart>
                 </div>
                 <div className="w-2/4">
                     <GaugeChart
                         data={gaugeData}
                         options={gaugeOptions}
-                    ></ GaugeChart>
+                    ></GaugeChart>
                 </div>
             </div>
 
@@ -167,14 +167,14 @@ United States of America </span></p>
                             </label>
                         </div>
                         <div className="w-2/4 flex flex-row text-sm">
-                            <p className="w-2/4 flex flex-row items-center">
+                            <div className="w-2/4 flex flex-row items-center">
                                 <div className="w-3 h-3 mr-4 rounded-full bg-[#225243]"></div>
                                 <span>Available</span>
-                            </p>
-                            <p className="w-2/4 flex flex-row items-center">
+                            </div>
+                            <div className="w-2/4 flex flex-row items-center">
                                 <div className="w-3 h-3 mr-4 rounded-full bg-[#c00]"></div>
                                 <span>Offline</span>
-                            </p>
+                            </div>
                         </div>
                     </div>
 
