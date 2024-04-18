@@ -23,7 +23,7 @@ export const line_options = {
         left: {
             mapsTo: 'value',
             title: 'Conversion rate',
-            scaleType: 'curve'
+            scaleType: 'linear'
         }
     },
     height: '400px',
