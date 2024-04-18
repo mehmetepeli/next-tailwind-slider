@@ -146,3 +146,5 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+.r__font_size { font-size: calc(15px + .8vw) }

@@ -11,9 +11,10 @@ import {AiOutlineLike, AiOutlineQuestion, AiOutlineQuestionCircle} from "react-i
 import {BiSupport} from "react-icons/bi";
 import {GoPaperAirplane} from "react-icons/go";
 import '@carbon/charts-react/styles.css'
-import { DonutChart, LineChart, GaugeChart } from '@carbon/charts-react'
+import { DonutChart, LineChart, GaugeChart, SimpleBarChart } from '@carbon/charts-react'
 import {donut_data, line_data, gauge_data} from '@/constants/data'
-import {donut_options, line_options, gauge_options} from '@/constants/options'
+import {donut_options, donut_options2,  line_options, gauge_options} from '@/constants/options'
+import {IoStatsChart, IoStatsChartOutline, IoWalletOutline} from "react-icons/io5";
 
 const ProfilePage = () => {
     const donutData = donut_data;
@@ -21,6 +22,7 @@ const ProfilePage = () => {
     const gaugeData = gauge_data;
 
     const donutOptions = donut_options;
+    const donutOptions2 = donut_options2;
     const lineOptions = line_options;
     const gaugeOptions = gauge_options;
 
@@ -39,7 +41,7 @@ const ProfilePage = () => {
                     <Link href="/profile" className="w-auto h-fit px-6 py-2 text-sm rounded-lg shadow-lg bg-white">Resend Confirmation Link</Link>
                 </div>
             </div>
-            <div className="w-full h-auto px-4 py-6 flex flex-row rounded-lg border-[1px] border-[#eceeed] bg-[#fbfbfb]">
+            <div className="w-full h-auto px-4 py-6 flex flex-row rounded-lg border-[1px] border-[#eceeed]">
                 <ProfileImg src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"/>
                 <div className="w-[calc(100%_-_6rem)] h-auto flex flex-row">
                     <div className="w-[40%] flex flex-col">
@@ -60,14 +62,48 @@ United States of America </span></p>
                 </div>
             </div>
 
-            <div className="w-full h-auto px-4 py-6 mt-8 flex flex-row rounded-lg border-[1px] border-[#eceeed] bg-[#fbfbfb]">
-                <div className="w-2/4">
-                    <DonutChart
-                        data={donutData}
-                        options={donutOptions}
-                    ></DonutChart>
+            <div className="w-full h-auto flex flex-row mt-2">
+                <div className="w-2/4 h-auto flex flex-row">
+                    <div className="w-full h-auto flex flex-col px-4 py-6 mr-2 rounded-lg border-[1px] border-[#eceeed] bg-[#225243] relative overflow-hidden">
+                        <div className="w-80 h-80 absolute -top-4 -right-32 rounded-full bg-gradient-to-t from-[#225243] to-white opacity-10" />
+                        <div className="w-full flex flex-col mb-6">
+                            <h5 className="w-full pb-2 mb-6 flex flex-row items-center text-sm font-medium border-[#eceeed]">
+                                <span className="w-8 h-8 flex items-center justify-center rounded-full bg-white text-[#225243] shadow-lg"><IoStatsChartOutline/></span>
+                                {/* eslint-disable-next-line react/no-unescaped-entities */}
+                                <span className="ml-2 text-white">Month's Spend</span>
+                            </h5>
+                            <p className="w-full flex flex-row px-2 text-white">
+                                <span className="mr-1 font-bold text-md">$</span>
+                                <span className="font-bold r__font_size">300.85</span>
+                            </p>
+                        </div>
+                        <div className="w-full flex flex-col mb-6">
+                            <h5 className="w-full pb-2 mb-6 flex flex-row items-center text-sm font-medium border-[#eceeed]">
+                                <span className="w-8 h-8 flex items-center justify-center rounded-full bg-white text-[#225243] shadow-lg"><IoStatsChartOutline/></span>
+                                {/* eslint-disable-next-line react/no-unescaped-entities */}
+                                <span className="ml-2 text-white">Year's Spend</span>
+                            </h5>
+                            <p className="w-full flex flex-row px-2 text-white">
+                                <span className="mr-1 font-bold text-md">$</span>
+                                <span className="font-bold r__font_size">3,300.85</span>
+                            </p>
+                        </div>
+                        <div className="w-full flex flex-col">
+                            <h5 className="w-full pb-2 mb-6 flex flex-row items-center text-sm font-medium border-[#eceeed]">
+                                <span className="w-8 h-8 flex items-center justify-center rounded-full bg-white text-[#225243] shadow-lg"><IoStatsChartOutline/></span>
+                                <span className="ml-2 text-white">Total Spends</span>
+                            </h5>
+                            <p className="w-full flex flex-row px-2 text-white">
+                                <span className="mr-1 font-bold text-md">$</span>
+                                <span className="font-bold r__font_size">36,999.85</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div className="w-full h-auto flex flex-col px-4 py-6 mr-2 rounded-lg border-[1px] border-[#eceeed]">
+
+                    </div>
                 </div>
-                <div className="w-2/4">
+                <div className="w-2/4 h-auto px-4 py-6 rounded-lg border-[1px] border-[#eceeed]">
                     <DonutChart
                         data={donutData}
                         options={donutOptions}
@@ -75,14 +111,29 @@ United States of America </span></p>
                 </div>
             </div>
 
-            <div className="w-full h-auto px-4 py-6 mt-8 flex rounded-lg border-[1px] border-[#eceeed] bg-[#fbfbfb]">
+            <div className="w-full h-auto px-4 py-6 mt-2 flex flex-row rounded-lg border-[1px] border-[#eceeed]">
+                <div className="w-2/4">
+                    <DonutChart
+                        data={donutData}
+                        options={donutOptions2}
+                    ></DonutChart>
+                </div>
+                <div className="w-2/4">
+                    <DonutChart
+                        data={donutData}
+                        options={donutOptions2}
+                    ></DonutChart>
+                </div>
+            </div>
+
+            <div className="w-full h-auto px-4 py-6 mt-2 flex rounded-lg border-[1px] border-[#eceeed]">
                 <LineChart
                     data={lineData}
                     options={lineOptions}
                 ></LineChart>
             </div>
 
-            <div className="w-full h-auto px-4 py-6 mt-8 flex flex-row rounded-lg border-[1px] border-[#eceeed] bg-[#fbfbfb]">
+            <div className="w-full h-auto px-4 py-6 mt-2 flex flex-row rounded-lg border-[1px] border-[#eceeed]">
                 <div className="w-2/4">
                     <GaugeChart
                     data={gaugeData}
@@ -97,9 +148,9 @@ United States of America </span></p>
                 </div>
             </div>
 
-            <div className="w-full h-auto px-4 py-6 my-8 flex flex-col rounded-lg border-[1px] border-[#eceeed] bg-[#fbfbfb]">
-                <h3 className="w-full pb-4 px-2 mb-6 flex flex-row items-center text-md font-medium border-b-[1px] border-[#eceeed]">
-                    <GoPaperAirplane/>
+            <div className="w-full h-auto px-4 py-6 my-2 flex flex-col rounded-lg border-[1px] border-[#eceeed]">
+                <h3 className="w-full pb-4 mb-6 flex flex-row items-center text-md font-medium border-b-[1px] border-[#eceeed]">
+                    <span className="w-8 h-8 flex items-center justify-center rounded-full bg-slate-200"><GoPaperAirplane/></span>
                     <span className="ml-3">Requests</span>
                 </h3>
                 <table className="table-auto">
@@ -139,9 +190,9 @@ United States of America </span></p>
             </div>
 
             <div className="w-full h-auto flex flex-row">
-                <div className="w-2/4 h-auto px-4 py-6 mr-8 rounded-lg border-[1px] border-[#eceeed] bg-[#fbfbfb]">
-                    <h4 className="w-full pb-2 px-2 mb-6 flex flex-row items-center text-md font-medium border-b-[1px] border-[#eceeed]">
-                        <LuSettings/>
+                <div className="w-2/4 h-auto px-4 py-6 mr-2 rounded-lg border-[1px] border-[#eceeed]">
+                    <h4 className="w-full pb-2 mb-6 flex flex-row items-center text-md font-medium border-b-[1px] border-[#eceeed]">
+                        <span className="w-8 h-8 flex items-center justify-center rounded-full bg-slate-200"><LuSettings/></span>
                         <span className="ml-3">General</span>
                     </h4>
                     <ul className="w-full flex flex-col text-sm font-medium">
@@ -150,9 +201,9 @@ United States of America </span></p>
                         <li><Link href="/profile" className="w-full flex flex-row items-center"><BiSupport/> <span className="ml-3">Contact Support</span></Link></li>
                     </ul>
                 </div>
-                <div className="w-2/4 h-auto px-4 py-6 rounded-lg border-[1px] border-[#eceeed] bg-[#fbfbfb]">
-                    <h4 className="w-full pb-2 px-2 mb-6 flex flex-row items-center text-md font-medium border-b-[1px] border-[#eceeed]">
-                        <LuSettings/>
+                <div className="w-2/4 h-auto px-4 py-6 rounded-lg border-[1px] border-[#eceeed]">
+                    <h4 className="w-full pb-2 mb-6 flex flex-row items-center text-md font-medium border-b-[1px] border-[#eceeed]">
+                        <span className="w-8 h-8 flex items-center justify-center rounded-full bg-slate-200"><LuSettings/></span>
                         <span className="ml-3">General</span>
                     </h4>
                     <p className="text-sm mb-4">Please check your working status !</p>
@@ -182,7 +233,6 @@ United States of America </span></p>
                         <li className="mb-2">Languages / English - Bulgarian - Dutch</li>
                         <li className="mb-2">Working categories / English - Bulgarian - Dutch</li>
                     </ul>
-
                 </div>
             </div>
         </div>

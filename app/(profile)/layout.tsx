@@ -30,7 +30,7 @@ const ProfileLayout = ({children}: { children: React.ReactNode }) => {
                             </button>
                         </div>
                     </div>
-                    <div className="w-full flex flex-row px-2 py-8">
+                    <div className="w-full flex flex-row px-2 pt-8">
                         <SideMenu links={sideLinks}/>
                         <div className="w-10/12">
                             {children}

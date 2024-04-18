@@ -1,13 +1,34 @@
 export const donut_options = {
     title: 'Donut',
     resizable: true,
+    legend: {
+        alignment: 'center',
+        enabled: false
+    },
     donut: {
         center: {
             label: 'Browsers'
-        }
+        },
+        alignment: 'center'
+    },
+    height: '300px',
+    toolbar: { "enabled": false }
+}
+
+export const donut_options2 = {
+    title: 'Donut',
+    resizable: true,
+    legend: {
+        alignment: 'center',
+    },
+    donut: {
+        center: {
+            label: 'Browsers'
+        },
+        alignment: 'center'
     },
     height: '400px',
-    toolbar: { "enabled": false },
+    toolbar: { "enabled": false }
 }
 
 // "toolbar": { "enabled": true, "controls": [ { "type": "Reset zoom" }, { "type": "Zoom in" }, { "type": "Zoom out" }, ], "numberOfIcons": 4 },
