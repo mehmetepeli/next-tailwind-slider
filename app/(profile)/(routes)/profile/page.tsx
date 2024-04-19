@@ -99,8 +99,8 @@ United States of America </span></p>
                             <span className="font-bold r__font_size drop-shadow-md">36,999.85</span>
                         </p>
                     </div>
-                    <div className="w-full mt-4">
-                        <Link href="/profile" className="flex flex-row items-center justify-end text-sm group">
+                    <div className="w-full flex justify-center mt-4">
+                        <Link href="/profile" className="w-fit flex flex-row items-center text-sm group">
                             <span className="w-6 h-6 mr-2 flex items-center justify-center text-[#225243] rounded-full bg-white shadow-lg group-hover:scale-90 duration-300"><PiCursorClick/></span>
                             <span className="text-white">More</span>
                         </Link>
@@ -171,8 +171,8 @@ United States of America </span></p>
                             </div>
                         </Link>
                     </article>
-                    <div className="w-full mt-4">
-                        <Link href="/profile" className="flex flex-row items-center justify-end text-sm group">
+                    <div className="w-full flex justify-center mt-4">
+                        <Link href="/profile" className="w-fit flex flex-row items-center text-sm group">
                             <span className="w-6 h-6 mr-2 flex items-center justify-center text-orange-600 rounded-full bg-white shadow-lg group-hover:scale-90 duration-300"><PiCursorClick/></span>
                             <span className="text-white">More</span>
                         </Link>
