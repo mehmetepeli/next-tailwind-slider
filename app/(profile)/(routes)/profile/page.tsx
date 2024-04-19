@@ -188,6 +188,8 @@ export const columns: ColumnDef<Payment>[] = [
     },
 ]
 
+import { useToast } from "@/components/ui/use-toast"
+
 const ProfilePage = () => {
     const donutData = donut_data;
     const lineData = line_data;
@@ -224,6 +226,8 @@ const ProfilePage = () => {
         },
     });
 
+    const { toast } = useToast();
+
     return (
         <div className="h-full">
             <div className="w-full h-32 mb-8 flex flex-row rounded-lg relative bg-gradient-to-r from-[#225243] to-[#008359] overflow-hidden">
@@ -236,7 +240,12 @@ const ProfilePage = () => {
                 </div>
                 <Image src="/big-email-icon.png" width="180" height="180" alt="Icon" className="absolute -top-8 right-0 opacity-10 -rotate-45"/>
                 <div className="w-[30%] h-full flex justify-center items-center z-10">
-                    <Link href="/profile" className="w-auto h-fit px-6 py-2 text-sm rounded-lg shadow-lg bg-white">Resend Confirmation Link</Link>
+                    <Link href="#" className="w-auto h-fit px-6 py-2 text-sm rounded-lg shadow-lg bg-white" onClick={() => {
+                        toast({
+                            title: "Confirmation Link",
+                            description: "Your confirmation link is resend again!",
+                        })
+                    }}>Resend Confirmation Link</Link>
                 </div>
             </div>
             <div className="w-full h-auto px-4 py-6 flex flex-row rounded-lg border-[1px] border-[#eceeed]">
