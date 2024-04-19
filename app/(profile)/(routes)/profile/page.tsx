@@ -101,7 +101,7 @@ United States of America </span></p>
                     </div>
                     <div className="w-full flex justify-center mt-4">
                         <Link href="/profile" className="w-fit flex flex-row items-center text-sm group">
-                            <span className="w-6 h-6 mr-2 flex items-center justify-center text-[#225243] rounded-full bg-white shadow-lg group-hover:scale-90 duration-300"><PiCursorClick/></span>
+                            <span className="w-6 h-6 mr-2 flex items-center justify-center text-[#225243] rounded-full bg-white shadow-lg group-hover:scale-75 duration-300"><PiCursorClick/></span>
                             <span className="text-white">More</span>
                         </Link>
                     </div>
@@ -173,7 +173,7 @@ United States of America </span></p>
                     </article>
                     <div className="w-full flex justify-center mt-4">
                         <Link href="/profile" className="w-fit flex flex-row items-center text-sm group">
-                            <span className="w-6 h-6 mr-2 flex items-center justify-center text-orange-600 rounded-full bg-white shadow-lg group-hover:scale-90 duration-300"><PiCursorClick/></span>
+                            <span className="w-6 h-6 mr-2 flex items-center justify-center text-orange-600 rounded-full bg-white shadow-lg group-hover:scale-75 duration-300"><PiCursorClick/></span>
                             <span className="text-white">More</span>
                         </Link>
                     </div>
