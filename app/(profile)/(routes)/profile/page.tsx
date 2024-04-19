@@ -4,10 +4,10 @@ import ProfileImg from "@/components/profile/profile-img";
 import {GrLocation} from "react-icons/gr";
 import {MdOutlineEmail, MdWorkOutline} from "react-icons/md";
 import {LuPhone, LuSettings} from "react-icons/lu";
-import {TbClock, TbCloudUpload} from "react-icons/tb";
+import {TbClock, TbUserCircle} from "react-icons/tb";
 import Link from "next/link";
 import Image from "next/image";
-import {AiOutlineLike, AiOutlineQuestion, AiOutlineQuestionCircle} from "react-icons/ai";
+import {AiOutlineLike, AiOutlineQuestionCircle} from "react-icons/ai";
 import {BiSupport} from "react-icons/bi";
 import {GoPaperAirplane} from "react-icons/go";
 import '@carbon/charts-react/styles.css'
@@ -189,6 +189,7 @@ export const columns: ColumnDef<Payment>[] = [
 ]
 
 import { useToast } from "@/components/ui/use-toast"
+import { Progress } from "@/components/ui/progress"
 
 const ProfilePage = () => {
     const donutData = donut_data;
@@ -248,7 +249,14 @@ const ProfilePage = () => {
                     }}>Resend Confirmation Link</Link>
                 </div>
             </div>
-            <div className="w-full h-auto px-4 py-6 flex flex-row rounded-lg border-[1px] border-[#eceeed]">
+            <div className="w-full h-auto px-4 py-6 flex flex-col rounded-lg border-[1px] border-[#eceeed]">
+                <p className="w-full flex flex-row items-center mb-4 text-sm font-medium">
+                    <TbUserCircle/>
+                    <span className="ml-2">Your profile requirement is %33 completed !</span>
+                </p>
+                <Progress value={33} />
+            </div>
+            <div className="w-full h-auto mt-2 px-4 py-6 flex flex-row rounded-lg border-[1px] border-[#eceeed]">
                 <ProfileImg src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"/>
                 <div className="w-[calc(100%_-_6rem)] h-auto flex flex-row">
                     <div className="w-[40%] flex flex-col">
