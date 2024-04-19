@@ -4,7 +4,7 @@ import ProfileImg from "@/components/profile/profile-img";
 import {GrLocation} from "react-icons/gr";
 import {MdOutlineEmail, MdWorkOutline} from "react-icons/md";
 import {LuPhone, LuSettings} from "react-icons/lu";
-import {TbCloudUpload} from "react-icons/tb";
+import {TbClock, TbCloudUpload} from "react-icons/tb";
 import Link from "next/link";
 import Image from "next/image";
 import {AiOutlineLike, AiOutlineQuestion, AiOutlineQuestionCircle} from "react-icons/ai";
@@ -15,6 +15,8 @@ import { DonutChart, LineChart, GaugeChart, SimpleBarChart } from '@carbon/chart
 import {donut_data, line_data, gauge_data} from '@/constants/data'
 import {donut_options, donut_options2,  line_options, gauge_options} from '@/constants/options'
 import {IoStatsChart, IoStatsChartOutline, IoWalletOutline} from "react-icons/io5";
+import {RxCalendar} from "react-icons/rx";
+import {PiCursorClick} from "react-icons/pi";
 
 const ProfilePage = () => {
     const donutData = donut_data;
@@ -63,47 +65,120 @@ United States of America </span></p>
             </div>
 
             <div className="w-full h-auto flex flex-row mt-2">
-                <div className="w-2/4 h-auto flex flex-row">
-                    <div className="w-full h-auto flex flex-col px-4 py-6 mr-2 rounded-lg border-[1px] border-[#eceeed] bg-[#225243] relative overflow-hidden">
-                        <div className="w-80 h-80 absolute -top-4 -right-32 rounded-full bg-gradient-to-t from-[#225243] to-white opacity-10" />
-                        <div className="w-full flex flex-col mb-6">
-                            <h5 className="w-full pb-2 mb-6 flex flex-row items-center text-sm font-medium border-[#eceeed]">
-                                <span className="w-8 h-8 flex items-center justify-center rounded-full bg-white text-[#225243] shadow-lg"><IoStatsChartOutline/></span>
-                                {/* eslint-disable-next-line react/no-unescaped-entities */}
-                                <span className="ml-2 text-white">Month's Spend</span>
-                            </h5>
-                            <p className="w-full flex flex-row px-2 text-white">
-                                <span className="mr-1 font-bold text-md">$</span>
-                                <span className="font-bold r__font_size drop-shadow-md">300.85</span>
-                            </p>
-                        </div>
-                        <div className="w-full flex flex-col mb-6">
-                            <h5 className="w-full pb-2 mb-6 flex flex-row items-center text-sm font-medium border-[#eceeed]">
-                                <span className="w-8 h-8 flex items-center justify-center rounded-full bg-white text-[#225243] shadow-lg"><IoStatsChartOutline/></span>
-                                {/* eslint-disable-next-line react/no-unescaped-entities */}
-                                <span className="ml-2 text-white">Year's Spend</span>
-                            </h5>
-                            <p className="w-full flex flex-row px-2 text-white">
-                                <span className="mr-1 font-bold text-md">$</span>
-                                <span className="font-bold r__font_size drop-shadow-md">3,300.85</span>
-                            </p>
-                        </div>
-                        <div className="w-full flex flex-col">
-                            <h5 className="w-full pb-2 mb-6 flex flex-row items-center text-sm font-medium border-[#eceeed]">
-                                <span className="w-8 h-8 flex items-center justify-center rounded-full bg-white text-[#225243] shadow-lg"><IoStatsChartOutline/></span>
-                                <span className="ml-2 text-white">Total Spends</span>
-                            </h5>
-                            <p className="w-full flex flex-row px-2 text-white">
-                                <span className="mr-1 font-bold text-md">$</span>
-                                <span className="font-bold r__font_size drop-shadow-md">36,999.85</span>
-                            </p>
-                        </div>
+                <div className="w-2/6 h-auto flex flex-col px-4 py-6 mr-2 rounded-lg bg-[#225243] relative overflow-hidden">
+                    <div className="w-80 h-80 absolute -top-4 -right-32 rounded-full bg-gradient-to-t from-[#225243] to-white opacity-10" />
+                    <div className="w-full flex flex-col mb-6">
+                        <h5 className="w-full pb-2 mb-6 flex flex-row items-center text-sm font-medium border-[#eceeed]">
+                            <span className="w-8 h-8 flex items-center justify-center rounded-full bg-white text-[#225243] shadow-lg"><IoStatsChartOutline/></span>
+                            {/* eslint-disable-next-line react/no-unescaped-entities */}
+                            <span className="ml-2 text-white">Month's Spend</span>
+                        </h5>
+                        <p className="w-full flex flex-row px-2 text-white">
+                            <span className="mr-1 font-bold text-md">$</span>
+                            <span className="font-bold r__font_size drop-shadow-md">300.85</span>
+                        </p>
                     </div>
-                    <div className="w-full h-auto flex flex-col px-4 py-6 mr-2 rounded-lg border-[1px] border-[#eceeed]">
-
+                    <div className="w-full flex flex-col mb-6">
+                        <h5 className="w-full pb-2 mb-6 flex flex-row items-center text-sm font-medium border-[#eceeed]">
+                            <span className="w-8 h-8 flex items-center justify-center rounded-full bg-white text-[#225243] shadow-lg"><IoStatsChartOutline/></span>
+                            {/* eslint-disable-next-line react/no-unescaped-entities */}
+                            <span className="ml-2 text-white">Year's Spend</span>
+                        </h5>
+                        <p className="w-full flex flex-row px-2 text-white">
+                            <span className="mr-1 font-bold text-md">$</span>
+                            <span className="font-bold r__font_size drop-shadow-md">3,300.85</span>
+                        </p>
+                    </div>
+                    <div className="w-full flex flex-col">
+                        <h5 className="w-full pb-2 mb-6 flex flex-row items-center text-sm font-medium border-[#eceeed]">
+                            <span className="w-8 h-8 flex items-center justify-center rounded-full bg-white text-[#225243] shadow-lg"><IoStatsChartOutline/></span>
+                            <span className="ml-2 text-white">Total Spends</span>
+                        </h5>
+                        <p className="w-full flex flex-row px-2 text-white">
+                            <span className="mr-1 font-bold text-md">$</span>
+                            <span className="font-bold r__font_size drop-shadow-md">36,999.85</span>
+                        </p>
+                    </div>
+                    <div className="w-full mt-4">
+                        <Link href="/profile" className="flex flex-row items-center justify-end text-sm group">
+                            <span className="w-6 h-6 mr-2 flex items-center justify-center text-[#225243] rounded-full bg-white shadow-lg group-hover:scale-90 duration-300"><PiCursorClick/></span>
+                            <span className="text-white">More</span>
+                        </Link>
                     </div>
                 </div>
-                <div className="w-2/4 h-auto px-4 py-6 rounded-lg border-[1px] border-[#eceeed]">
+                <div className="w-2/6 h-auto flex flex-col px-4 py-6 mr-2 rounded-lg bg-orange-600 relative overflow-hidden">
+                    <div className="w-80 h-80 absolute -top-4 -right-32 rounded-full bg-gradient-to-t from-[orange-600] to-white opacity-10" />
+                    <h4 className="w-full pb-4 mb-6 flex flex-row items-center text-md font-medium">
+                        <span className="w-8 h-8 flex items-center justify-center text-orange-600 rounded-full bg-white  shadow-lg"><RxCalendar/></span>
+                        <span className="ml-3 text-white">Scheduled Meeting</span>
+                    </h4>
+                    <article className="w-full h-full">
+                        <Link href="/profile">
+                            <div className="w-full flex flex-row flex-wrap items-center mb-4 p-2 relative text-[11px] text-white rounded-md border-white/30 border-[1px] bg-orange-500 shadow-md overflow-hidden hover:scale-105 duration-300">
+                                <div className="w-64 h-64 absolute -top-8 -right-20 rounded-full bg-white opacity-10" />
+                                <h5 className="w-full flex flex-row items-center mb-2 text-white text-md font-medium">
+                                    <span className="flex items-center justify-center text-lg rounded-full"><TbClock/></span>
+                                    <span className="ml-2">19/04/2024-1</span>
+                                </h5>
+                                <div className="w-full flex flex-row">
+                                    <p className="w-1/2 flex flex-col">
+                                        <span className="font-bold">Job Time</span>
+                                        <span>14:30</span>
+                                    </p>
+                                    <p className="w-1/2 flex flex-col">
+                                        <span className="font-bold">Category</span>
+                                        <span>Windmills</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </Link>
+                        <Link href="/profile">
+                            <div className="w-full flex flex-row flex-wrap items-center mb-4 p-2 relative text-[11px] text-white rounded-md border-white/30 border-[1px] bg-orange-500 shadow-md overflow-hidden hover:scale-105 duration-300">
+                                <div className="w-64 h-64 absolute -top-8 -right-20 rounded-full bg-white opacity-10" />
+                                <h5 className="w-full flex flex-row items-center mb-2 text-white text-md font-medium">
+                                    <span className="flex items-center justify-center text-lg rounded-full"><TbClock/></span>
+                                    <span className="ml-2">19/04/2024</span>
+                                </h5>
+                                <div className="w-full flex flex-row">
+                                    <p className="w-1/2 flex flex-col">
+                                        <span className="font-bold">Job Time</span>
+                                        <span>14:30</span>
+                                    </p>
+                                    <p className="w-1/2 flex flex-col">
+                                        <span className="font-bold">Category</span>
+                                        <span>Windmills</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </Link>
+                        <Link href="/profile">
+                            <div className="w-full flex flex-row flex-wrap items-center p-2 relative text-[11px] text-white rounded-md border-white/30 border-[1px] bg-orange-500 shadow-md overflow-hidden hover:scale-105 duration-300">
+                                <div className="w-64 h-64 absolute -top-8 -right-20 rounded-full bg-white opacity-10" />
+                                <h5 className="w-full flex flex-row items-center mb-2 text-white text-md font-medium">
+                                    <span className="flex items-center justify-center text-lg rounded-full"><TbClock/></span>
+                                    <span className="ml-2">19/04/2024</span>
+                                </h5>
+                                <div className="w-full flex flex-row">
+                                    <p className="w-1/2 flex flex-col">
+                                        <span className="font-bold">Job Time</span>
+                                        <span>14:30</span>
+                                    </p>
+                                    <p className="w-1/2 flex flex-col">
+                                        <span className="font-bold">Category</span>
+                                        <span>Windmills</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </Link>
+                    </article>
+                    <div className="w-full mt-4">
+                        <Link href="/profile" className="flex flex-row items-center justify-end text-sm group">
+                            <span className="w-6 h-6 mr-2 flex items-center justify-center text-orange-600 rounded-full bg-white shadow-lg group-hover:scale-90 duration-300"><PiCursorClick/></span>
+                            <span className="text-white">More</span>
+                        </Link>
+                    </div>
+                </div>
+                <div className="w-2/6 h-auto px-4 py-6 rounded-lg border-[1px] border-[#eceeed]">
                     <DonutChart
                         data={donutData}
                         options={donutOptions}
