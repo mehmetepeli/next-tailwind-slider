@@ -1,0 +1,11 @@
+{
+  "Home" : {
+    "slider_title": "Easiest way to find your partner and more quick!",
+    "slider_subtitle": "Easiest way to find your partner and more quick!"
+  },
+  "Profile": {
+    "register": "Register",
+    "activity_online": "Online",
+    "activity_offline": "Offline"
+  }
+}

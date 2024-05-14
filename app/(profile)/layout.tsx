@@ -3,8 +3,11 @@
 import * as React from "react";
 import SideMenu from "@/components/profile/side-menu";
 import {sideLinks} from "@/constants/profile-links";
+import {useTranslations} from "next-intl";
 
 const ProfileLayout = ({children}: { children: React.ReactNode }) => {
+    const t = useTranslations('Profile');
+
     return (
         <div className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 py-6 sm:py-12">
             <img src="https://play.tailwindcss.com/img/beams.jpg" alt="" className="absolute left-1/2 top-1/2 max-w-none -translate-x-1/2 -translate-y-1/2" width="1308" />
@@ -19,7 +22,7 @@ const ProfileLayout = ({children}: { children: React.ReactNode }) => {
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                                 </svg>
 
-                                Register
+                                {t('register')}
                             </button>
                             <button className="flex w-auto flex-row items-center rounded-full border-2 border-slate-200 bg-slate-200 px-4 py-2 transition duration-500 hover:border-2 hover:border-black hover:bg-white hover:text-black">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="mr-1 h-4 w-4">

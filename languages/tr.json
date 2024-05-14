@@ -1,0 +1,11 @@
+{
+  "Home" : {
+    "slider_title": "Partnerinizi bulmanın en kolay ve hızlı yolu!",
+    "slider_subtitle": "Partnerinizi bulmanın en kolay ve hızlı yolu!"
+  },
+  "Profile": {
+    "register": "Uye ol",
+    "activity_online": "Aktif",
+    "activity_offline": "Pasif"
+  }
+}
