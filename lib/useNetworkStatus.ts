@@ -1,30 +1,22 @@
 import { useEffect, useState } from "react";
 
 const useNetworkStatus = () => {
-    const [isOnline, setOnline] = useState<boolean>(true);
-
-    const updateNetworkStatus = () => {
-        setOnline(navigator.onLine);
-    };
-
-    //   sometimes, the load event does not trigger on some browsers, that is why manually calling updateNetworkStatus on initial mount
+    const [isOnline, setIsOnline] = useState(true);
     useEffect(() => {
-        updateNetworkStatus();
-    }, []);
+        function updateState() {
+            setIsOnline(navigator.onLine);
+        }
 
-    useEffect(() => {
-        window.addEventListener("load", updateNetworkStatus);
-        window.addEventListener("online", updateNetworkStatus);
-        window.addEventListener("offline", updateNetworkStatus);
+        updateState();
 
+        window.addEventListener('online', updateState);
+        window.addEventListener('offline', updateState);
         return () => {
-            window.removeEventListener("load", updateNetworkStatus);
-            window.removeEventListener("online", updateNetworkStatus);
-            window.removeEventListener("offline", updateNetworkStatus);
+            window.removeEventListener('online', updateState);
+            window.removeEventListener('offline', updateState);
         };
     }, []);
-
-    return { isOnline };
+    return isOnline;
 };
 
 export default useNetworkStatus;
