@@ -3,6 +3,7 @@
 import Categories from "@/components/categories";
 import {useEffect, useState} from "react";
 
+import Image from "next/image";
 import {TbBeach, TbMountain, TbPool} from "react-icons/tb";
 import {
   GiBarn,
@@ -333,6 +334,15 @@ const Home = () => {
             <Slider/>
             <div className="w-full h-[200px] bg-green-900">
               {(isOnline) ? t('activity_online') : t('activity_offline')}
+
+              <Image
+                  src="https://unsplash.com/photos/XV1qykwu82c"
+                  alt="Cover photo"
+                  width={700}
+                  height={500}
+                  blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADA..."
+                  placeholder="blur"
+              />
             </div>
             <div className="w-full h-auto my-6 px-4">
               <Tabs defaultValue="cities" className="w-full">
