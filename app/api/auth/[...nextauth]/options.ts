@@ -18,7 +18,7 @@ export const options: NextAuthOptions = {
                     placeholder: "Password"
                 },
             },
-            async authorize(credentials) {
+            async authorize(credentials: any) {
                 if (!credentials?.username || !credentials?.password) {
                     throw new Error('Invalid credentials')
                 }
